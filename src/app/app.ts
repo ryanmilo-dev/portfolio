@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; // Needed for ngModel
 //import { HttpClientModule } from '@angular/common/http'; // Needed for HttpClient
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MainPageComponent } from './main-page/main-page';
+
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule, HttpClientModule, MainPageComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })
@@ -65,6 +67,6 @@ export class AppComponent {
 
   grantAccess() {
     this.accessGranted = true;
-    this.resultHtml = `<h1>You made it</h1>`;
   }
+
 }

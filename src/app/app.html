@@ -1,3 +1,4 @@
+<!-- Show password gate until access is granted -->
 <div class="container" *ngIf="!accessGranted">
   <h2>Password Required</h2>
   <input
@@ -11,9 +12,6 @@
   <button (click)="checkPassword()" [disabled]="loading">Access</button>
   <div class="message" *ngIf="message">{{ message }}</div>
 </div>
-<!--
-<div class="container" *ngIf="accessGranted">
-  <h1>You made it</h1>
-</div>
--->
-<div class="container" *ngIf="accessGranted" [innerHTML]="resultHtml"></div>
+
+<!-- Only show the MainPageComponent after accessGranted -->
+<main-page class="container" *ngIf="accessGranted"></main-page>

@@ -1,50 +1,56 @@
 {
-  "hash": "9429cc1b",
-  "configHash": "4f85e6a9",
-  "lockfileHash": "bf13a61e",
-  "browserHash": "312a9c2d",
+  "hash": "950345dd",
+  "configHash": "74f9aa07",
+  "lockfileHash": "435cb7fa",
+  "browserHash": "fee3c8ae",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "27658416",
+      "fileHash": "8eb490a2",
       "needsInterop": false
     },
     "@angular/common/http": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
       "file": "@angular_common_http.js",
-      "fileHash": "1177af6a",
+      "fileHash": "33989e8f",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "c4f47852",
+      "fileHash": "efa93fe8",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "bfda24a2",
+      "fileHash": "d77d6256",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "62ad2295",
+      "fileHash": "d9399405",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "2dd5c21e",
+      "fileHash": "cd47e974",
       "needsInterop": false
     },
     "zone.js": {
       "src": "../../../../../../node_modules/zone.js/fesm2015/zone.js",
       "file": "zone__js.js",
-      "fileHash": "c46b7695",
+      "fileHash": "9b663fe9",
       "needsInterop": true
+    },
+    "@angular/animations": {
+      "src": "../../../../../../node_modules/@angular/animations/fesm2022/animations.mjs",
+      "file": "@angular_animations.js",
+      "fileHash": "af6adb0f",
+      "needsInterop": false
     }
   },
   "chunks": {
