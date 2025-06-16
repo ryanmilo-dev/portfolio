@@ -47,7 +47,7 @@ export class AppComponent implements AfterViewInit {
   mixer?: THREE.AnimationMixer;
   clock = new THREE.Clock();
   model?: THREE.Object3D; // or THREE.Group, or specific type if you know it
-  mouse = { x: 0, y: 0 };
+  mouse = { x: 1, y: 1 };
   shakeAmount = 0;
   spreadAmount = 0;
   currentSpread = 0;
