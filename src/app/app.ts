@@ -219,7 +219,7 @@ export class AppComponent implements AfterViewInit {
     // Line connects points in sequence, plus closes the loop
     const linePoints = this.points.concat([this.points[0]]);
     const lineGeometry = new THREE.BufferGeometry().setFromPoints(linePoints);
-    const lineMaterial = new THREE.LineBasicMaterial({ color: 0xaaffff, linewidth: 10 }); //line colour
+    const lineMaterial = new THREE.LineBasicMaterial({ color: 0xaaffff, linewidth: 1 }); //line colour
     this.lineMesh = new THREE.Line(lineGeometry, lineMaterial);
 
     this.scene.add(this.pointMesh);
