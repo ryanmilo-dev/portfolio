@@ -1,4 +1,4 @@
-import "./chunk-GHBFJGGI.js";
+import "./chunk-SKPY32AC.js";
 import "./chunk-W7ENOTKE.js";
 import {
   ANIMATION_MODULE_TYPE,
@@ -12,8 +12,8 @@ import {
   setClassMetadata,
   ɵɵdefineInjectable,
   ɵɵinject
-} from "./chunk-4QFITECQ.js";
-import "./chunk-WDMUDEB6.js";
+} from "./chunk-NECLYR2O.js";
+import "./chunk-XWLXMCJQ.js";
 
 // node_modules/@angular/animations/fesm2022/private_export-B_vy_9K7.mjs
 var AnimationMetadataType;

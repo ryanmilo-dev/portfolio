@@ -1,17 +1,19 @@
-<!-- Show password gate until access is granted -->
+<div class="bg-canvas-wrapper">
+  <canvas #bgCanvas></canvas>
+</div>
+<div class="page-title-container"><h1 class="page-title">Ryan Lobban</h1><p class="page-subtitle">-portfolio-</p></div>
 <div class="container" *ngIf="!accessGranted">
-  <h2>Password Required</h2>
   <input
     type="password"
     [(ngModel)]="password"
     (keydown.enter)="checkPassword()"
+    (ngModelChange)="onPasswordInput($event)"
+    (focus)="onPasswordFocus()"
     [disabled]="loading"
     placeholder="Enter password"
     autofocus
+    [ngClass]="{'flash-success': feedback === 'success', 'flash-error': feedback === 'error'}"
   >
-  <button (click)="checkPassword()" [disabled]="loading">Access</button>
-  <div class="message" *ngIf="message">{{ message }}</div>
 </div>
 
-<!-- Only show the MainPageComponent after accessGranted -->
-<main-page class="container" *ngIf="accessGranted"></main-page>
+<circle-menu *ngIf="showCircleMenu" (menuSelected)="onMenuSelected($event)" (menuDeselected)="onMenuDeselected()"></circle-menu>

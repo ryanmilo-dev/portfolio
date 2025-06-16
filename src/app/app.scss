@@ -1,3 +1,4 @@
+/*
 .container {
   display: flex;
   flex-direction: column;
@@ -5,12 +6,59 @@
   justify-content: center;
   min-height: 100vh;
 }
+*/
+.page-title-container{
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  border-radius: 6px;
+  padding: 0.2em 1.1em;
+  transform: translate(-50%, 0);
+  background: linear-gradient(90deg, #7a4dcb 0%, #acbafd99 100%);
+  backdrop-filter: blur(1px);
+}
+.page-title{
+  font-family: "Montserrat";
+  color: #ffffffaa;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 900;
+  margin-bottom: 0;
+  letter-spacing: 2px;
+}
+.page-subtitle {
+  font-family: "Montserrat";
+  font-size: 0.58em;
+  color: #4e226baa;
+  margin-top: 0.4em;
+  font-weight: 500;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  text-align: center;
+  transform: translate(0.3em, 0px);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; // instead of min-height
+  margin: 0;     // Prevent any accidental margin
+  padding: 0;    // Prevent any accidental padding
+  box-sizing: border-box;
+}
 
 input[type="password"] {
+  font-family: "Montserrat";
   font-size: 1.2rem;
   padding: 0.5rem;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+input::placeholder {
+  color: #fff;         // Change to your desired color
+  opacity: 0.5;          // Optional: make fully opaque if needed
 }
 
 .message {
@@ -20,4 +68,64 @@ input[type="password"] {
 
 h1, h2 {
   margin-bottom: 1.5rem;
+}
+
+input {
+  color: #43c6ac;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+input[type="password"] {
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 0.5em 1em; /* Optional for better look */
+  border-radius: 6px;  /* Optional for rounded corners */
+  background: linear-gradient(90deg, #aebfff 0%, #7543c6 100%);
+  color: #ffffffaa; /* Adjust text color for readability */
+  transition: all 0.3s ease-in-out;
+}
+input[type="password"] {
+  caret-color: #43c6ac; // Teal color for caret
+}
+
+@keyframes flashRed {
+  0% { box-shadow: 0 0 0px 0 #ffaca6; }
+  50% { box-shadow: 0 0 12px 6px #ffaca6; }
+  100% { box-shadow: 0 0 0px 0 #ffaca6; }
+}
+
+@keyframes flashGreen {
+  0% { box-shadow: 0 0 0px 0 #86e3ff; }
+  50% { box-shadow: 0 0 12px 6px #86e3ff; }
+  100% { box-shadow: 0 0 0px 0 #86e3ff; }
+}
+
+.flash-error {
+  animation: flashRed 0.6s;
+}
+
+.flash-success {
+  animation: flashGreen 0.6s;
+}
+
+.bg-canvas-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; // allows clicks to go through
+  opacity: 0.8;
+}
+canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+.container, input, button {
+  position: relative;
+  z-index: 1;
 }
