@@ -129,7 +129,7 @@ export class CircleMenuComponent implements OnInit {
         heading: 'Frontend',
         body: `Proficient in <strong>building modern web interfaces</strong> with React, Vanilla JS, and WordPress, I’ve delivered customer-facing dashboards, real-time data visualizations, and robust admin panels.<br>
         I <strong>emphasize performance, responsiveness, and seamless integration</strong> with backends and APIs.<hr>
-        My experience includes UX/UI design, dynamic charting, and creating custom interfaces for industrial control, monitoring, and reporting.<hr>
+        <strong>My experience includes</strong> UX/UI design, dynamic charting, and creating custom interfaces for industrial control, monitoring, and reporting.<hr>
         <strong>React.js, Angular, JavaScript, TypeScript, HTML, SCSS/CSS, WordPress, Data visualization, REST APIs, WebSockets</strong>`
       }
     },
