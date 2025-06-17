@@ -60,6 +60,9 @@ export class AppComponent implements AfterViewInit {
   mouseScrollCount = 1;
   newPointsPositionSet = false;
 
+  titleFaded = false;
+  isMobile = false;
+
   //3D model
   movedToMiddle = false;
   currentPosition = [0, -10, 200];
@@ -71,7 +74,13 @@ export class AppComponent implements AfterViewInit {
   pointColor = 0x55ffff; // Set this to any hex color (0xffffff = white)
   spreadEndSize = 1.2;
 
+  @HostListener('window:resize')
+  onResize() {
+    this.isMobile = window.innerWidth < 768;
+  }
+
   ngAfterViewInit() {
+    this.onResize(); // initialize
     this.initThree();
     this.animate();
   }
@@ -991,6 +1000,9 @@ export class AppComponent implements AfterViewInit {
   }
 
   onMenuSelected(index: number) {
+    if (this.isMobile) {
+      this.titleFaded = true;
+    }
     if(this.selectedCircleMenuIndex !== index){
       this.selectedCircleMenuIndex = index;
       this.collapseAmount = this.spreadEndSize; // Collapse to center
@@ -1004,6 +1016,10 @@ export class AppComponent implements AfterViewInit {
   }
 
   onMenuDeselected(){
+    if (this.isMobile) {
+      // Fade in after a short delay (matches animation duration)
+      setTimeout(() => this.titleFaded = false, 400);
+    }
     if(this.selectedCircleMenuIndex !== 7){
       this.selectedCircleMenuIndex = 7;
       this.collapseAmount = this.spreadEndSize; // Collapse to center

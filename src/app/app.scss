@@ -13,9 +13,11 @@
   left: 50%;
   border-radius: 6px;
   padding: 0.2em 1.1em;
+  opacity: 1;
   transform: translate(-50%, 0);
   background: linear-gradient(90deg, #7a4dcb 0%, #acbafd99 100%);
   backdrop-filter: blur(1px);
+  transition: opacity 0.4s;
 }
 .page-title{
   font-family: "Montserrat";
@@ -122,4 +124,11 @@ canvas {
 .container, input, button {
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .page-title-container.fade-title {
+    opacity: 0;
+    pointer-events: none;
+  }
 }

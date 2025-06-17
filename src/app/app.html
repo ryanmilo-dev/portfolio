@@ -1,7 +1,7 @@
 <div class="bg-canvas-wrapper">
   <canvas #bgCanvas></canvas>
 </div>
-<div class="page-title-container"><h1 class="page-title">Ryan Lobban</h1><p class="page-subtitle">-portfolio-</p></div>
+<div class="page-title-container" [ngClass]="{'fade-title': titleFaded}"><h1 class="page-title">Ryan Lobban</h1><p class="page-subtitle">-portfolio-</p></div>
 <div class="container" *ngIf="!accessGranted">
   <input
     type="password"
