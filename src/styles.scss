@@ -1,6 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background: linear-gradient(90deg, #aebfff 0%, #7543c6 100%);
+  //background: linear-gradient(90deg, #aebfff 0%, #7543c6 100%);
+  //background: linear-gradient(90deg, #ffffff 0%, #e5efff 50%, #ffffff 100%);
+  background: radial-gradient(circle, #cce9ff 0%, #ffffff 50%, #ffffff 100%);
+}
+
+hr {
+  background: #060d75a8;
+  color: #060d75a8;
+  height: 1px;
+  border: none;
 }
 html, body {
   height: 100%;

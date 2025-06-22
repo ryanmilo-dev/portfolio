@@ -7,28 +7,60 @@
   min-height: 100vh;
 }
 */
+.page-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(0.5px);
+}
+.title-link {
+  cursor:pointer;
+}
 .page-title-container{
-  position: fixed;
-  top: 5%;
-  left: 50%;
-  border-radius: 6px;
-  padding: 0.2em 1.1em;
-  opacity: 1;
-  transform: translate(-50%, 0);
-  background: linear-gradient(90deg, #7a4dcb 0%, #acbafd99 100%);
-  backdrop-filter: blur(1px);
-  transition: opacity 0.4s;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transform-origin: 0 0;
+    border-radius: 6px;
+    padding: 0.5em;
+    opacity: 1;
+    /* transform: translate(-50%, 0); */
+    cursor: pointer;
+    //background: #ffffff33;
+    background: linear-gradient(120deg, #ffffff33 0%, #ffffff33 30%, #ffffff 40%, #ffffff33 50%, #ffffff33 100%);
+    background-size: 400%, 100%;
+    border-top: 1px solid #aaaaff55;
+    border-left: 1px solid #aaaaff55;
+    border-right: 3px solid #aaaaff88;
+    border-bottom: 3px solid #aaaaff88;
+    /* background: linear-gradient(90deg, #7a4dcb 0%, rgba(172, 186, 253, 0.6) 100%); */
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+    transition: opacity 0.4s,
+                background-size 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                background-position 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index:999;
+    
+    &:hover {
+      //background-size: 200% 100%;
+      background-position: 65% 0;
+      transform: scale(1.1) translate(-50%, 0);
+    }
+
 }
 .page-title{
   font-family: "Montserrat";
-  color: #ffffffaa;
+  color: rgb(0 17 255 / 62%);
   text-align: center;
   font-size: 1em;
   font-weight: 900;
-  margin-bottom: 0;
+  margin: 0;
   letter-spacing: 2px;
 }
 .page-subtitle {
+  display: none;
   font-family: "Montserrat";
   font-size: 0.58em;
   color: #4e226baa;
@@ -48,12 +80,14 @@
   margin: 0;     // Prevent any accidental margin
   padding: 0;    // Prevent any accidental padding
   box-sizing: border-box;
+  //backdrop-filter: blur(0.7px);
 }
 
 input::placeholder {
-  color: #fff;         // Change to your desired color
+  color: #0011ff9e;         // Change to your desired color
   opacity: 0.5;          // Optional: make fully opaque if needed
   text-transform:uppercase;
+  font-weight:600;
 }
 
 .message {
@@ -66,7 +100,7 @@ h1, h2 {
 }
 
 input {
-  color: #43c6ac;
+  color: #0011ff9e;
   text-align: center;
   letter-spacing: 2px;
 }
@@ -79,24 +113,30 @@ input[type="password"] {
   border: none;
   outline: none;
   box-shadow: none;
-  padding: 0.5em 0.08em; /* Optional for better look */
-  border-radius: 6px;  /* Optional for rounded corners */
-  background: linear-gradient(90deg, #aebfff 0%, #7543c6 100%);
-  color: #ffffffaa; /* Adjust text color for readability */
+  padding: 0.5em 0.08em;
+  border-radius: 6px;
+  background: #ffffff88;
+  /* background: linear-gradient(90deg, #aebfff 0%, #4353c6 100%); */
+  border-top: 1px solid #aaaaff55;
+  border-left: 1px solid #aaaaff55;
+  border-right: 3px solid #aaaaff88;
+  border-bottom: 3px solid #aaaaff88;
+  color: #0011ff9e;
   transition: all 0.3s ease-in-out;
-  caret-color: #43c6ac; // Teal color for caret
+  caret-color: #0011ff9e;
+  backdrop-filter: blur(1px);
 }
 
 @keyframes flashRed {
-  0% { box-shadow: 0 0 0px 0 #ffaca6; }
-  50% { box-shadow: 0 0 12px 6px #ffaca6; }
-  100% { box-shadow: 0 0 0px 0 #ffaca6; }
+  0% { box-shadow: 0 0 0px 0 #fd615688; }
+  50% { box-shadow: 0 0 12px 6px #fd615688; }
+  100% { box-shadow: 0 0 0px 0 #fd615688; }
 }
 
 @keyframes flashGreen {
-  0% { box-shadow: 0 0 0px 0 #86e3ff; }
-  50% { box-shadow: 0 0 12px 6px #86e3ff; }
-  100% { box-shadow: 0 0 0px 0 #86e3ff; }
+  0% { box-shadow: 0 0 0px 0 #6669fa88; }
+  50% { box-shadow: 0 0 12px 6px #6669fa88; }
+  100% { box-shadow: 0 0 0px 0 #6669fa88; }
 }
 
 .flash-error {

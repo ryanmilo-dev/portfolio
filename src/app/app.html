@@ -1,7 +1,7 @@
 <div class="bg-canvas-wrapper">
   <canvas #bgCanvas></canvas>
 </div>
-<div class="page-title-container" [ngClass]="{'fade-title': titleFaded}"><h1 class="page-title">Ryan Lobban</h1><p class="page-subtitle">-portfolio-</p></div>
+<div class="page-container"></div>
 <div class="container" *ngIf="!accessGranted">
   <input
     type="password"
@@ -15,5 +15,5 @@
     [ngClass]="{'flash-success': feedback === 'success', 'flash-error': feedback === 'error'}"
   >
 </div>
-
 <circle-menu *ngIf="showCircleMenu" (menuSelected)="onMenuSelected($event)" (menuDeselected)="onMenuDeselected()"></circle-menu>
+<a class="title-link" href="#"><div class="page-title-container" *ngIf="showCircleMenu" [ngClass]="{'fade-title': titleFaded}" onclick="location.reload(); return false;"><h1 class="page-title">ryan.</h1></div></a>

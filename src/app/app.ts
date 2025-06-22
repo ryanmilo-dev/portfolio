@@ -65,13 +65,15 @@ export class AppComponent implements AfterViewInit {
 
   //3D model
   movedToMiddle = false;
-  currentPosition = [0, -10, 200];
+  //currentPosition = [0, -10, 200];
+  currentPosition = [0, -10, 10];
   movePosition = [0, -10, 150];
   menuSelectionEvent = false;
   menuDeselectionEvent = false;
 
   pointSize = 3;      // Set this to any number for size
-  pointColor = 0x55ffff; // Set this to any hex color (0xffffff = white)
+  //pointColor = 0x55ffff; // Set this to any hex color (0xffffff = white)
+  pointColor = 0x0000ff; // Set this to any hex color (0xffffff = white)
   spreadEndSize = 1.2;
 
   @HostListener('window:resize')
@@ -98,7 +100,8 @@ export class AppComponent implements AfterViewInit {
     dirLight.position.set(0, 150, 300);
     this.scene.add(dirLight);
 
-    const fog = new THREE.Fog(0x9281e3, 150, 290);
+    //const fog = new THREE.Fog(0x9281e3, 150, 290);
+    const fog = new THREE.Fog(0xcce9ff, 100, 400);
     this.scene.fog = fog;
 
     this.renderer = new THREE.WebGLRenderer({
@@ -228,7 +231,8 @@ export class AppComponent implements AfterViewInit {
     // Line connects points in sequence, plus closes the loop
     const linePoints = this.points.concat([this.points[0]]);
     const lineGeometry = new THREE.BufferGeometry().setFromPoints(linePoints);
-    const lineMaterial = new THREE.LineBasicMaterial({ color: 0xaaffff, linewidth: 1 }); //line colour
+    //const lineMaterial = new THREE.LineBasicMaterial({ color: 0xaaffff, linewidth: 1 }); //line colour
+    const lineMaterial = new THREE.LineBasicMaterial({ color: 0x5555ff, linewidth: 1 }); //line colour
     this.lineMesh = new THREE.Line(lineGeometry, lineMaterial);
 
     this.scene.add(this.pointMesh);
@@ -764,7 +768,7 @@ export class AppComponent implements AfterViewInit {
                   this.setPointsToSpikeySphere(70, 40, 100, 0.18);
                   break;
                 default:
-                  this.setPointsToDoubleHelix(90, 18, 10, 100);// radius, pitch, turns, num points
+                  this.setPointsToDoubleHelix(40, 18, 10, 100);// radius, pitch, turns, num points
               }
               //this.setPointsToSphere(90);
               //this.setPointsToCube(110);
@@ -819,7 +823,8 @@ export class AppComponent implements AfterViewInit {
         let indexCount = 0;
         for (let j = 0; j < this.currentPosition.length; j++){
           if(!(this.currentPosition[j] > (this.movePosition[j] - 1.0) && this.currentPosition[j] < (this.movePosition[j] + 1.0))){
-            this.currentPosition[j] *= 0.98;
+            //this.currentPosition[j] *= 0.98;
+            this.currentPosition[j] += (this.movePosition[j] - this.currentPosition[j])/10;
           } else {
             indexCount++;
           }

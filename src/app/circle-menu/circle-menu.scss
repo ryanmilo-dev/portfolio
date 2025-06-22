@@ -12,48 +12,50 @@
   width: 100vw;
   height: 100vh;
   pointer-events: none; // Block only the parent
+  transform:scale(0.7);
 }
 
 .circle-btn {
   position: absolute;
-  font-family: "Montserrat";
-  opacity: 0;
-  width:95px;
-  transform: translate(-50%, -50%) scale(0.1);
-  border-radius: 600px;
-  //padding: 3em 1.3em;
-  padding: 1.75em 0.1em;
-  //padding: 0.5em 1em;
-  font-size: 1.2rem;
-  border: 2px solid #baaeff;
-  //background: linear-gradient(90deg, #aebfff 0%, #7543c6 100%);
-  background: linear-gradient(90deg, #fbaeffaa 0%, #9fa5e755 50%, #439bc6aa 100%);
-  background-size: 100% 100%;
-  color: white;
-  letter-spacing: 2px;
-  cursor: pointer;
-  pointer-events: auto;
-  //box-shadow: 0 3px 12px rgba(20, 20, 40, 0.07);
-  //transition: background 0.3s, box-shadow 0.2s, transform 0.2s, opacity 0.4s;
-  //opacity: 0.93;
-  transition:
-    //background 0.3s,
-    //box-shadow 0.2s,
-    background-size 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-    left 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-    top 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-    border 0.3s ease,
-    opacity 0.6s ease;
+    font-family: "Montserrat";
+    opacity: 0;
+    width: 95px;
+    border-radius: 120px;
+    padding: 1.75em 0.1em;
+    font-size: 1.2rem;
+    border-top: 1px solid #aaaaff88;
+    border-left: 1px solid #aaaaff88;
+    border-right: 3px solid #aaaaff88;
+    border-bottom: 3px solid #aaaaff88;
+    background: linear-gradient(120deg, #ffffff88 0%, #ffffff88 30%, #ffffff 40%, #ffffff88 50%, #ffffff88 100%);
+    backdrop-filter: blur(1px);
+    /* background: radial-gradient(circle, rgba(28, 52, 158, 0.6666666667) 0%, rgba(159, 165, 231, 0.3333333333) 60%, #1c349e 100%); */
+    background-size: 400% 100%;
+    background-position: 0 0;
+    color: #0011ff9e;
+    /* opacity: 0.1; */
+    letter-spacing: 2px;
+    font-weight: 800;
+    cursor: pointer;
+    pointer-events: auto;
+    transform: scale(0.8);
+    transition: background-size 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                left 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                top 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                border 0.3s ease,
+                opacity 0.6s ease;
 
   &:hover,
   &.highlight {
     //background: linear-gradient(90deg, #7543c6 0%, #aebfff 100%);
     //background: linear-gradient(90deg, #baaeffaa 0%, #5743c6aa 100%);
-    background-size: 200% 100%; // the gradient "stretches"
+    //background-size: 100% 100%; // the gradient "stretches"
+    background-position: 65% 0;
     //transition: all 1s;
     //color: #171717;
-    border: 2px solid #aef3ff;
+    //border: 2px solid #aef3ff;
     transform: scale(1.11);
     z-index: 3;
     //box-shadow: 0 6px 36px rgba(34,212,253,0.18);
@@ -73,9 +75,14 @@
 }
 
 .content-box {
-  color: white;
+  color: #0011ff9e;
   border-radius: 1.5rem;
-  background: linear-gradient(90deg, #fbaeffaa 0%, #439bc6aa 100%);
+  background: #ffffffaa;
+  border-top: 1px solid rgba(170, 170, 255, 0.3333333333);
+  border-left: 1px solid rgba(170, 170, 255, 0.3333333333);
+  border-right: 3px solid rgba(170, 170, 255, 0.5333333333);
+  border-bottom: 3px solid rgba(170, 170, 255, 0.5333333333);
+  /* background: linear-gradient(90deg, rgba(251, 174, 255, 0.6666666667) 0%, rgba(67, 155, 198, 0.6666666667) 100%); */
   padding: 2.5em 2em 2em 2em;
   min-width: 240px;
   min-height: 200px;
@@ -89,51 +96,63 @@
   transform: scale(0.1);
   transform-origin: 50% 50%;
   transition: all 0.6s ease;
+  -webkit-backdrop-filter: blur(1px);
   backdrop-filter: blur(1px);
 
   h2 {
     margin-bottom: 0.7em;
-    color: #e4ffff;
-    text-shadow: 0px 0px 12px #77ffff;
+    color: #0011ff9e;
+    //text-shadow: 0px 0px 12px #77ffff;
   }
   p {
     margin-bottom: 2em;
-    color: rgb(255, 255, 255);
+    color: #060d75a8;
     font-size: 0.8em;
-    font-weight:200;
+    font-weight:400;
     line-height: 1.4em;
     text-align: center;
+    
   }
 }
 
 .close-btn {
-  background: linear-gradient(90deg, #baaeff 0%, #5743c6 100%);
-  background-size: 100% 100%;
-  color: #ffffff;
-  border: none;
-  border-radius: 999px;
-  font-size: 1.1em;
-  padding: 0.8em 2.2em;
-  cursor: pointer;
-  font-weight: 500;
-  //box-shadow: 0 2px 20px rgba(34,212,253,0.08);
-  margin-top: 0.5em;
-  transition: background-size 0.2s, transform 0.22s;
-  text-transform:uppercase;
-  box-shadow: 0px 0px 5px #77ffff inset;
+      /* background: linear-gradient(90deg, #baaeff 0%, #5743c6 100%); */
+    background: linear-gradient(120deg, #ffffff00 0%, #ffffff00 30%, #ffffff 40%, #ffffff00 50%, #ffffff00 100%);
+    background-size: 400% 100%;
+    color: #0011ff9e;
+    border-top: 1px solid rgba(170, 170, 255, 0.3333333333);
+    border-left: 1px solid rgba(170, 170, 255, 0.3333333333);
+    border-right: 3px solid rgba(170, 170, 255, 0.5333333333);
+    border-bottom: 3px solid rgba(170, 170, 255, 0.5333333333);
+    /* border: none; */
+    border-radius: 6px;
+    font-size: 1.1em;
+    padding: 0.8em 2.2em;
+    cursor: pointer;
+    font-weight: 800;
+    margin-top: 0.5em;
+    transform: scale(0.8);
+    transition: background-size 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                background-position 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    text-transform: uppercase;
+    /* box-shadow: 0px 0px 5px #77ffff inset; */
 
   &:hover {
-    color: white;
-    background-size: 200% 100%;
-    transform: scale(1.06);
+    color: #0011ffa8;
+    //background-size: 200% 100%;
+    background-position: 65% 0;
+    transform: scale(1.0);
   }
 }
 
 @media (max-width: 768px) {
   .content-box {
-    max-width:100vw;
-    max-height:none;
-    height:auto;
-    border-radius:0;
+    margin-bottom: 2em;
+    color: #0a13939e;
+    font-size: 0.8em;
+    font-weight: 400;
+    line-height: 1.4em;
+    text-align: center;
   }
 }

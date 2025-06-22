@@ -98,19 +98,19 @@ export class CircleMenuComponent implements OnInit {
       content: {
         heading: 'Experience',
         body: `With a <strong>BSc in Electrical, Electronic & Computer Engineering</strong>, I’ve built a <strong>diverse career</strong> spanning firmware development, fullstack web engineering, industrial automation, business leadership, and technical mentorship.<br><br>
-        I’ve <strong>led projects</strong> from renewable energy at CST SA (attending COP17 for wind tech innovation), to <strong>founding and running DIR Information Technology</strong>, through to <strong>architecting industrial IoT and AGV (Automated Guided Vehicle) systems</strong> at Control Technology and Battalion Technologies.<hr>
+        <strong>I’ve led projects</strong> from renewable energy at CST SA (attending COP17 for wind tech innovation), to <strong>founding and running DIR Information Technology</strong>, through to <strong>architecting industrial IoT and AGV (Automated Guided Vehicle) systems</strong> at Control Technology and Battalion Technologies.<hr>
         My work <strong>consistently bridges the technical and human</strong>, focusing on <strong>robust solutions</strong> and delivering <strong>measurable business impact</strong>.<hr>
-        <strong>Node.js, C, React.js, Vanilla JS, Django, Python, MicroPython, Arduino, PHP, MySQL, PostgreSQL, MS SQL Server, MQTT, CAN bus, WebSockets, APIs, Linux, AWS, WHM/cPanel, PLCs, VFDs, HMI, SCADA, OPC UA, Modbus, RS485, RS232</strong>`
+        <strong>Node.js • C • React.js • Vanilla JS • Django • Python • MicroPython • Arduino • PHP • MySQL • PostgreSQL • MS SQL Server • MQTT • CAN bus • WebSockets • APIs • Linux • AWS • WHM/cPanel • PLCs • VFDs • HMI • SCADA • OPC UA • Modbus • RS485 • RS232</strong>`
       }
     },
     {
       label: 'bizDev',
       content: {
         heading: 'Business Development',
-        body: `I <strong>founded and grew my own IT/web development business</strong>, led client relationships, managed pitches and proposals, and shaped market strategies for startups and established firms.<br><br>
-        At <strong>Battalion Technologies</strong>, I crafted market entry, product, and service strategies, managed stakeholder engagements from trade shows to site visits, and helped define the company’s vision, core competencies, and growth trajectory.<hr>
+        body: `<strong>I founded and grew my own IT/web development business</strong>, led client relationships, managed pitches and proposals, and shaped market strategies for startups and established firms.<br><br>
+        <strong>At Battalion Technologies</strong>, I crafted market entry, product, and service strategies, managed stakeholder engagements from trade shows to site visits, and helped define the company’s vision, core competencies, and growth trajectory.<hr>
         My <strong>approach balances technical innovation with practical business outcomes</strong>, always building strong, lasting client relationships.<hr>
-        <strong>Client pitching, Market strategy, Product positioning, Proposal writing, Customer profiling, Startup operations, Trade shows</strong>`
+        <strong>Client pitching • Market strategy • Product positioning • Proposal writing • Customer profiling • Startup operations • Trade shows</strong>`
       }
     },
     {
@@ -118,9 +118,9 @@ export class CircleMenuComponent implements OnInit {
       content: {
         heading: 'Design',
         body: `<strong>User experience and design thinking</strong> are at the heart of my work.<br><br>
-        I’ve <strong>designed interfaces</strong> for industrial SCADA/HMI, intuitive web applications, and <strong>complete product ecosystems</strong> - always prioritizing usability, safety, and maintainability.<hr>
+        <strong>I’ve designed interfaces</strong> for industrial SCADA/HMI, intuitive web applications, and <strong>complete product ecosystems</strong> - always prioritizing usability, safety, and maintainability.<hr>
         My skills span graphic design, branding, and content creation (with >50k TikTok followers), as well as AI-powered UX, video, and music production. I <strong>create engaging, accessible digital experiences</strong> that resonate with users and drive adoption.<hr>
-        <strong>UI/UX, Adobe Photoshop, Illustrator, Krita, Video editing, After Effects, Premier Pro, Content creation, Branding, HMI design, Web graphics, Blender, Social media, Accessibility, OnShape</strong>`
+        <strong>UI/UX • Adobe Photoshop • Illustrator • Krita • Video editing • After Effects • Premier Pro • Content creation • Branding • HMI design • Web graphics • Blender • Social media • Accessibility • OnShape</strong>`
       }
     },
     {
@@ -128,9 +128,9 @@ export class CircleMenuComponent implements OnInit {
       content: {
         heading: 'Frontend',
         body: `Proficient in <strong>building modern web interfaces</strong> with React, Vanilla JS, and WordPress, I’ve delivered customer-facing dashboards, real-time data visualizations, and robust admin panels.<br>
-        I <strong>emphasize performance, responsiveness, and seamless integration</strong> with backends and APIs.<hr>
+        <strong>I emphasize performance, responsiveness, and seamless integration</strong> with backends and APIs.<hr>
         <strong>My experience includes</strong> UX/UI design, dynamic charting, and creating custom interfaces for industrial control, monitoring, and reporting.<hr>
-        <strong>React.js, Angular, JavaScript, TypeScript, HTML, SCSS/CSS, WordPress, Data visualization, REST APIs, WebSockets</strong>`
+        <strong>React.js • Angular • JavaScript • TypeScript • HTML • SCSS/CSS • WordPress • Data visualization • REST APIs • WebSockets</strong>`
       }
     },
     {
@@ -138,9 +138,9 @@ export class CircleMenuComponent implements OnInit {
       content: {
         heading: 'Backend',
         body: `<strong>Deep experience</strong> in Node.js, C, PHP, and microcontroller firmware (C, MicroPython, Arduino), with a strong focus on robust, scalable, and secure architectures.<br>
-        I’ve <strong>developed everything</strong> from low-level device drivers and non-blocking CAN/MQTT communication layers to API-driven server applications and real-time socket bridges.<hr>
+        <strong>I’ve developed everything</strong> from low-level device drivers and non-blocking CAN/MQTT communication layers to API-driven server applications and real-time socket bridges.<hr>
         My work <strong>enables seamless data flow, interoperability, and flexible integration</strong> - powering both industrial automation and web solutions.<hr>
-        <strong>Node.js, C, PHP, Express.js, Python, MicroPython, Arduino, MQTT, CAN bus, WebSockets, REST APIs, Linux socket programming</strong>`
+        <strong>Node.js • C • PHP • Express.js • Python • MicroPython • Arduino • MQTT • CAN bus • WebSockets • REST APIs • Linux socket programming</strong>`
       }
     },
     {
@@ -148,9 +148,9 @@ export class CircleMenuComponent implements OnInit {
       content: {
         heading: 'Data',
         body: `<strong>Skilled in both real-time and batch data management</strong>: SQL (Postgres, MySQL, MS SQL Server), JSON-based systems, and high-speed telemetry for industrial IoT.<br>
-        I’ve <strong>architected pipelines</strong> for data normalization, analytics, and automated reporting (PDF/Excel), always with a focus on <strong>operational insight and actionable metrics</strong>.<hr>
+        <strong>I’ve architected pipelines</strong> for data normalization, analytics, and automated reporting (PDF/Excel), always with a focus on <strong>operational insight and actionable metrics</strong>.<hr>
         I leverage data to optimize systems, drive business value, and inform strategic decision-making.<hr>
-        <strong>MySQL, PostgreSQL, MS SQL Server, JSON, Data pipelines, Analytics, ETL, Automated reporting (PDF/Excel)</strong>`
+        <strong>MySQL • PostgreSQL • MS SQL Server • JSON • Data pipelines • Analytics • ETL • Automated reporting (PDF/Excel)</strong>`
       }
     },
     {
@@ -158,8 +158,8 @@ export class CircleMenuComponent implements OnInit {
       content: {
         heading: 'Server',
         body: `<strong>Extensive server experience</strong>: from managing AWS deployments, web hosting (WHM, cPanel), and Linux system administration (Ubuntu, Amazon Linux), to configuring networking (MQTT brokers, Websockets, APIs) and email infrastructure.<hr>
-        I <strong>design and maintain reliable, secure server environments</strong> that scale with business needs, ensuring high uptime and robust support for both web and industrial systems<hr>
-        <strong>Ubuntu, Amazon Linux, AWS, WHM/cPanel, DNS, SSL, SMTP, MQTT brokers, Docker, CI/CD, Networking, Email hosting</strong>`
+        <strong>I design and maintain reliable, secure server environments</strong> that scale with business needs, ensuring high uptime and robust support for both web and industrial systems<hr>
+        <strong>Ubuntu • Amazon Linux • AWS • WHM/cPanel • DNS • SSL • SMTP • MQTT brokers • Docker • CI/CD • Networking • Email hosting</strong>`
       }
     },
   ];
