@@ -73,7 +73,7 @@ export class AppComponent implements AfterViewInit {
 
   pointSize = 3;      // Set this to any number for size
   //pointColor = 0x55ffff; // Set this to any hex color (0xffffff = white)
-  pointColor = 0x0000ff; // Set this to any hex color (0xffffff = white)
+  pointColor = 0xbbbbff; // Set this to any hex color (0xffffff = white)
   spreadEndSize = 1.2;
 
   @HostListener('window:resize')
@@ -232,7 +232,7 @@ export class AppComponent implements AfterViewInit {
     const linePoints = this.points.concat([this.points[0]]);
     const lineGeometry = new THREE.BufferGeometry().setFromPoints(linePoints);
     //const lineMaterial = new THREE.LineBasicMaterial({ color: 0xaaffff, linewidth: 1 }); //line colour
-    const lineMaterial = new THREE.LineBasicMaterial({ color: 0x5555ff, linewidth: 1 }); //line colour
+    const lineMaterial = new THREE.LineBasicMaterial({ color: 0xbbbbff, linewidth: 1 }); //line colour
     this.lineMesh = new THREE.Line(lineGeometry, lineMaterial);
 
     this.scene.add(this.pointMesh);

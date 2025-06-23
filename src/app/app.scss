@@ -28,15 +28,15 @@
     /* transform: translate(-50%, 0); */
     cursor: pointer;
     //background: #ffffff33;
-    background: linear-gradient(120deg, #ffffff33 0%, #ffffff33 30%, #ffffff 40%, #ffffff33 50%, #ffffff33 100%);
+    //background: linear-gradient(120deg, #ffffff33 0%, #ffffff33 30%, #ffffff 40%, #ffffff33 50%, #ffffff33 100%);
     background-size: 400%, 100%;
-    border-top: 1px solid #aaaaff55;
-    border-left: 1px solid #aaaaff55;
-    border-right: 3px solid #aaaaff88;
-    border-bottom: 3px solid #aaaaff88;
+    //border-top: 1px solid #aaaaff55;
+    //border-left: 1px solid #aaaaff55;
+    //border-right: 3px solid #aaaaff88;
+    //border-bottom: 3px solid #aaaaff88;
     /* background: linear-gradient(90deg, #7a4dcb 0%, rgba(172, 186, 253, 0.6) 100%); */
-    -webkit-backdrop-filter: blur(1px);
-    backdrop-filter: blur(1px);
+    //-webkit-backdrop-filter: blur(1px);
+    //backdrop-filter: blur(1px);
     transition: opacity 0.4s,
                 background-size 0.9s cubic-bezier(0.22, 1, 0.36, 1),
                 background-position 0.9s cubic-bezier(0.22, 1, 0.36, 1),
@@ -52,7 +52,7 @@
 }
 .page-title{
   font-family: "Montserrat";
-  color: rgb(0 17 255 / 62%);
+  color: #bbbbff;
   text-align: center;
   font-size: 1em;
   font-weight: 900;
@@ -84,7 +84,7 @@
 }
 
 input::placeholder {
-  color: #0011ff9e;         // Change to your desired color
+  color: #84caff;         // Change to your desired color
   opacity: 0.5;          // Optional: make fully opaque if needed
   text-transform:uppercase;
   font-weight:600;
@@ -100,7 +100,7 @@ h1, h2 {
 }
 
 input {
-  color: #0011ff9e;
+  color: #84caffaa;
   text-align: center;
   letter-spacing: 2px;
 }
@@ -115,16 +115,16 @@ input[type="password"] {
   box-shadow: none;
   padding: 0.5em 0.08em;
   border-radius: 6px;
-  background: #ffffff88;
+  background: #ffffffaa;
   /* background: linear-gradient(90deg, #aebfff 0%, #4353c6 100%); */
-  border-top: 1px solid #aaaaff55;
-  border-left: 1px solid #aaaaff55;
-  border-right: 3px solid #aaaaff88;
-  border-bottom: 3px solid #aaaaff88;
-  color: #0011ff9e;
+  border-top: 1px solid #84caffaa;
+  border-left: 1px solid #84caffaa;
+  border-right: 3px solid #84caffaa;
+  border-bottom: 3px solid #84caffaa;
+  color: #84caffaa;
   transition: all 0.3s ease-in-out;
-  caret-color: #0011ff9e;
-  backdrop-filter: blur(1px);
+  caret-color: #84caffaa;
+  backdrop-filter: blur(3px);
 }
 
 @keyframes flashRed {
@@ -134,9 +134,9 @@ input[type="password"] {
 }
 
 @keyframes flashGreen {
-  0% { box-shadow: 0 0 0px 0 #6669fa88; }
-  50% { box-shadow: 0 0 12px 6px #6669fa88; }
-  100% { box-shadow: 0 0 0px 0 #6669fa88; }
+  0% { box-shadow: 0 0 0px 0 #84caffaa; }
+  50% { box-shadow: 0 0 12px 6px #84caffaa; }
+  100% { box-shadow: 0 0 0px 0 #84caffaa; }
 }
 
 .flash-error {
