@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild, AfterViewInit, HostListener } from '@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 import { CircleMenuComponent } from './circle-menu/circle-menu';
 import { GLTFLoader } from 'three-stdlib';
 
@@ -31,7 +32,10 @@ export class AppComponent implements AfterViewInit {
   feedback: 'success' | 'error' | '' = '';
   private feedbackTimeout: any = null;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+  private http: HttpClient,
+  private route: ActivatedRoute
+  ) {}
 
   // ---- THREE.JS ANIMATION ----
   @ViewChild('bgCanvas', { static: true }) bgCanvas!: ElementRef<HTMLCanvasElement>;
@@ -85,6 +89,15 @@ export class AppComponent implements AfterViewInit {
     this.onResize(); // initialize
     this.initThree();
     this.animate();
+  }
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      if (params['password']) {
+        this.password = params['password'];
+        // Trigger any logic you want here!
+        setTimeout(() => this.checkPassword(), 0);
+      }
+    });
   }
 
   initThree() {
