@@ -1,4 +1,4 @@
-<div class="bg-canvas-wrapper">
+<div #bgCanvasWrapper class="bg-canvas-wrapper">
   <canvas #bgCanvas></canvas>
 </div>
 <div class="page-container"></div>
@@ -16,4 +16,4 @@
   >
 </div>
 <circle-menu *ngIf="showCircleMenu" (menuSelected)="onMenuSelected($event)" (menuDeselected)="onMenuDeselected()"></circle-menu>
-<a class="title-link" href="#"><div class="page-title-container" *ngIf="showCircleMenu" [ngClass]="{'fade-title': titleFaded}" onclick="location.reload(); return false;"><h1 class="page-title">ryan.</h1></div></a>
+<a class="title-link" href="#"><div class="page-title-container" [ngClass]="{'fade-title': titleFaded}" onclick="location.reload(); return false;"><h1 class="page-title"><span #bgPageTitleGreen class="page-title-green">.ry</span>an</h1></div></a>

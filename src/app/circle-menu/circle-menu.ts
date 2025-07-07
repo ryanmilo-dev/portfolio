@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, signal, EventEmitter, Output } from '@angular/core';
+import { Component, HostListener, ElementRef, ViewChild, OnInit, signal, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, style, animate, transition } from '@angular/animations';
 //import { ThreeDViewerComponent } from '../three-d-viewer/three-d-viewer'; // Adjust path as needed
@@ -66,7 +66,7 @@ type MenuItem = {
     </button>
   </div>
 
-  <div class="content-container" *ngIf="showContent() && selectedIndex !== null">
+  <div #cContainer class="content-container" *ngIf="showContent() && selectedIndex !== null">
     <div *ngIf="contentState !== 'hidden'" class="content-box" [ngStyle]="getContentStyle()">
       <h2>{{ menuItems[selectedIndex!].content.heading }}</h2>
       <div class="content-text-container"><p class="content-paragraph-container" [innerHTML]="menuItems[selectedIndex!].content.body"></p></div>
@@ -96,6 +96,18 @@ export class CircleMenuComponent implements OnInit {
   rotationSpeed = 0.005; // Radians/frame, default
   centerReady = false;
   buttonScale = 1.0;
+
+  private _cContainer: ElementRef<HTMLDivElement> | null = null;
+
+  @ViewChild('cContainer', { static: false })
+  set cContainer(el: ElementRef<HTMLDivElement> | null) {
+    this._cContainer = el;
+  }
+  private get cContainerEl(): HTMLDivElement | null {
+    return this.cContainer && this.cContainer.nativeElement
+      ? this.cContainer.nativeElement
+      : null;
+  }
 
   menuItems: MenuItem[] = [
     {
@@ -246,6 +258,25 @@ export class CircleMenuComponent implements OnInit {
     return {};
   }
 
+  moveLeftInfoWindow() {
+    //const el = this.cContainerEl;
+    if (this._cContainer && this._cContainer.nativeElement){
+      if(window.innerWidth > 768){
+        this._cContainer.nativeElement.style.width = '50%';
+      } else{
+        this._cContainer.nativeElement.style.width = '100%';
+      }
+      //this._cContainer.nativeElement.style.background = 'linear-gradient(90deg, #6067b5, transparent)';
+    }
+  }
+  moveCentreInfoWindow() {
+    //const el = this.cContainerEl;
+    if (this._cContainer && this._cContainer.nativeElement){
+      //this._cContainer.nativeElement.style.width = '';
+      this._cContainer.nativeElement.style.background = '';
+    }
+  }
+
   getContentStyle() {
     if (this.contentState === 'hidden') {
       return { display: 'none' };
@@ -316,7 +347,9 @@ export class CircleMenuComponent implements OnInit {
     this.contentState = 'entering';
     this.showContent.set(true);
     this.menuSelected.emit(i);
+    
     setTimeout(() => {
+      this.moveLeftInfoWindow();
       this.menuState = 'hidden'; // Remove from DOM after animation
       this.contentState = 'visible';
       //setTimeout(() => {
@@ -327,6 +360,7 @@ export class CircleMenuComponent implements OnInit {
   }
 
   onCloseContent() {
+      this.moveCentreInfoWindow();
       this.menuDeselected.emit();
       this.contentState = 'exiting';
     setTimeout(() => {

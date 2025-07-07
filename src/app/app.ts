@@ -25,6 +25,8 @@ export class AppComponent implements AfterViewInit {
   accessGranted = false;
   showCircleMenu = false;
   resultHtml = '';
+  
+  old_selectedCircleMenuIndex: number | null = null;
 
   //Data from child
   selectedCircleMenuIndex: number | null = null;
@@ -39,13 +41,14 @@ export class AppComponent implements AfterViewInit {
 
   // ---- THREE.JS ANIMATION ----
   @ViewChild('bgCanvas', { static: true }) bgCanvas!: ElementRef<HTMLCanvasElement>;
+  @ViewChild('bgCanvasWrapper', { static: true }) bgCanvasWrapper!: ElementRef<HTMLCanvasElement>;
+  @ViewChild('bgPageTitleGreen', { static: true }) bgPageTitleGreen!: ElementRef<HTMLSpanElement>;
+  
   scene!: THREE.Scene;
   camera!: THREE.PerspectiveCamera;
   renderer!: THREE.WebGLRenderer;
   points: THREE.Vector3[] = [];
   basePoints: THREE.Vector3[] = [];
-  //pointMesh!: THREE.Points;
-  //lineMesh!: THREE.Line;
   pointMesh: THREE.Points | undefined;
   lineMesh: THREE.Line | undefined;
   mixer?: THREE.AnimationMixer;
@@ -69,7 +72,6 @@ export class AppComponent implements AfterViewInit {
 
   //3D model
   movedToMiddle = false;
-  //currentPosition = [0, -10, 200];
   currentPosition = [0, -10, 10];
   movePosition = [0, -10, 150];
   menuSelectionEvent = false;
@@ -98,6 +100,36 @@ export class AppComponent implements AfterViewInit {
         setTimeout(() => this.checkPassword(), 0);
       }
     });
+  }
+  resizeToHalfScreen() {
+    // Half width, full height (customize as needed)
+    if(window.innerWidth > 768){
+      const width = window.innerWidth / 2;
+      const height = window.innerHeight;
+
+      this.camera.aspect = width / height;
+      this.camera.updateProjectionMatrix();
+
+      this.renderer.setSize(width, height, false);
+    // Optionally: If your canvas is styled, also set CSS size
+      this.bgCanvas.nativeElement.style.width = width + 'px';
+      this.bgCanvas.nativeElement.style.height = height + 'px';
+      this.bgCanvasWrapper.nativeElement.style.transform = 'translate(50%, 0)';
+    }
+  }
+  resizeToFullScreen() {
+    // Half width, full height (customize as needed)
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    this.camera.aspect = width / height;
+    this.camera.updateProjectionMatrix();
+
+    this.renderer.setSize(width, height, false);
+    // Optionally: If your canvas is styled, also set CSS size
+    this.bgCanvas.nativeElement.style.width = width + 'px';
+    this.bgCanvas.nativeElement.style.height = height + 'px';
+    this.bgCanvasWrapper.nativeElement.style.transform = '';
   }
 
   initThree() {
@@ -758,49 +790,51 @@ export class AppComponent implements AfterViewInit {
               this.currentCollapse *= 0.999;
           } else {
             if(!this.newPointsPositionSet){
-              switch (this.selectedCircleMenuIndex){
-                case 1:
-                  this.setPointsToSphere(90)
-                  break;
-                case 2:
-                  this.setPointsToCube(110);
-                  break;
-                case 3:
-                  this.setPointsToPyramid(220, 220);
-                  break;
-                case 4:
-                  this.setPointsToTorus(80, 30, 100);
-                  break;
-                case 5:
-                  this.setPointsToTesseract(35, 100, true);
-                  break;
-                case 6:
-                  this.setPointsToFace(140, 180, 100, 100);
-                  break;
-                case 0:
-                  this.setPointsToSpikeySphere(70, 40, 100, 0.18);
-                  break;
-                default:
-                  this.setPointsToDoubleHelix(40, 18, 10, 100);// radius, pitch, turns, num points
+              if(this.old_selectedCircleMenuIndex !== this.selectedCircleMenuIndex){
+                
+                switch (this.selectedCircleMenuIndex){
+                  case 1:
+                    this.setPointsToSphere(90)
+                    this.resizeToHalfScreen();
+                    break;
+                  case 2:
+                    this.setPointsToCube(110);
+                    this.resizeToHalfScreen();
+                    break;
+                  case 3:
+                    this.setPointsToPyramid(220, 220);
+                    this.resizeToHalfScreen();
+                    break;
+                  case 4:
+                    this.setPointsToTorus(80, 30, 100);
+                    this.resizeToHalfScreen();
+                    break;
+                  case 5:
+                    this.setPointsToTesseract(35, 100, true);
+                    this.resizeToHalfScreen();
+                    break;
+                  case 6:
+                    this.setPointsToFace(140, 180, 100, 100);
+                    this.resizeToHalfScreen();
+                    break;
+                  case 0:
+                    this.setPointsToSpikeySphere(70, 40, 100, 0.18);
+                    this.resizeToHalfScreen();
+                    break;
+                  default:
+                    this.setPointsToDoubleHelix(40, 18, 10, 100);// radius, pitch, turns, num points
+                    this.resizeToFullScreen();
+                }
+                this.newPointsPositionSet = true;
+                if (this.debounceTimeout) clearTimeout(this.debounceTimeout);
+                }
+                this.old_selectedCircleMenuIndex = this.selectedCircleMenuIndex;
               }
-              //this.setPointsToSphere(90);
-              //this.setPointsToCube(110);
-              //this.setPointsToPyramid(220, 220);
-              //this.setPointsToTorus(80, 30, 100);
-              //this.setPointsToDoubleHelix(90, 18, 10, 150);// radius, pitch, turns, num points
-              //this.setPointsToTesseract(35, 100, true);
-              //this.setPointsToFace(140, 180, 100, 100);
-              //this.setPointsToTetrahedron(90, 100);
-              //this.setPointsToSpikeySphere(70, 40, 100, 0.18);
-              this.newPointsPositionSet = true;
-              if (this.debounceTimeout) clearTimeout(this.debounceTimeout);
-            }
             if(this.collapseAmount > 0.01){
               base.multiplyScalar(this.spreadEndSize + 0.01 - this.collapseAmount);
               this.collapseAmount *= 0.999
             } else {
               base.multiplyScalar(this.spreadEndSize + this.mouseScroll);
-              //base.multiplyScalar(this.spreadEndSize);
               this.newPointsPositionSet = false;
             }
           }
@@ -836,7 +870,6 @@ export class AppComponent implements AfterViewInit {
         let indexCount = 0;
         for (let j = 0; j < this.currentPosition.length; j++){
           if(!(this.currentPosition[j] > (this.movePosition[j] - 1.0) && this.currentPosition[j] < (this.movePosition[j] + 1.0))){
-            //this.currentPosition[j] *= 0.98;
             this.currentPosition[j] += (this.movePosition[j] - this.currentPosition[j])/10;
           } else {
             indexCount++;
@@ -849,15 +882,7 @@ export class AppComponent implements AfterViewInit {
         } else {
           this.model.position.set(this.currentPosition[0], this.currentPosition[1], this.currentPosition[2]);
         }
-        //this.model.scale.set(10, 10, 10);
       }
-      /*
-      if(this.model.rotation.y > (this.mouseScroll - 1.0) && this.model.rotation.y < (this.mouseScroll + 1.0)){
-        this.model.rotation.y = this.mouseScroll; // scroll to rotate 3D model
-      } else {
-        this.model.rotation.y += (this.model.rotation.y/this.mouseScroll)*0.1;
-      }
-        */
       if(this.mouseScrollCounter > this.mouseScrollCount){
         this.mouseScrollCounter = 0;
         if(this.mouseScroll < 0.01 && this.mouseScroll > -0.01){
@@ -869,7 +894,6 @@ export class AppComponent implements AfterViewInit {
         this.mouseScrollCounter++;
       }
       if(this.mouseScroll != 0.0){
-        //this.model.rotation.y += this.mouseScroll;
       }
       this.model.rotation.y = this.mouse.x;
 
@@ -884,7 +908,6 @@ export class AppComponent implements AfterViewInit {
       }
 
       if(this.menuDeselectionEvent){
-        //const targetYPosition = this.movePosition[1];
         if(this.model.position.y < this.movePosition[1] + 0.1 && this.model.position.y > this.movePosition[1] - 0.1){
           this.model.position.y = this.movePosition[1];
           this.menuDeselectionEvent = false;
@@ -914,10 +937,8 @@ export class AppComponent implements AfterViewInit {
     // Example variables:
     // Adjust point size with scroll
     if (event.deltaY < 0) {
-      //this.mouseScroll = Math.min(this.mouseScroll + 0.5, 50); // Increase, max 50
       this.mouseScroll-=0.01;
     } else {
-      //this.mouseScroll = Math.max(this.mouseScroll - 0.5, -50); // Decrease, min 1
       this.mouseScroll+=0.01;
     }
 
@@ -1031,12 +1052,21 @@ export class AppComponent implements AfterViewInit {
     console.log('Menu selected:', index);
     this.menuSelectionEvent = true;
     this.menuDeselectionEvent = false;
+    if(window.innerWidth > 768){
+      setTimeout(() => {
+        if (this.bgPageTitleGreen){
+          this.bgPageTitleGreen.nativeElement.style.color = '#00ff00';
+        }
+      }, 800);
+    }
   }
 
   onMenuDeselected(){
     if (this.isMobile) {
       // Fade in after a short delay (matches animation duration)
-      setTimeout(() => this.titleFaded = false, 400);
+      setTimeout(() => {
+        this.titleFaded = false;
+      }, 100);
     }
     if(this.selectedCircleMenuIndex !== 7){
       this.selectedCircleMenuIndex = 7;
@@ -1047,5 +1077,11 @@ export class AppComponent implements AfterViewInit {
     console.log('Menu deselected.');
     this.menuDeselectionEvent = true;
     this.menuSelectionEvent = false;
+
+    if(window.innerWidth > 768){
+      if (this.bgPageTitleGreen){
+        this.bgPageTitleGreen.nativeElement.style.color = '';
+      }
+    }
   }
 }
