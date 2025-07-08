@@ -15,6 +15,7 @@ type MenuItem = {
     heading: string;
     body: string;
   },
+  heading_quote: string,
   quote_mini: string,
   quote: string;
 };
@@ -56,6 +57,7 @@ type MenuItem = {
   template: `
   <div class="circle-container"
       *ngIf="centerReady && menuState !== 'hidden'">
+    <h1 class="heading-quote">{{ menuItems[selectedIndex_old!].heading_quote }}</h1>
     <button
       *ngFor="let item of menuItems; let i = index"
       class="circle-btn"
@@ -100,7 +102,8 @@ export class CircleMenuComponent implements OnInit {
   hoverIndex: number|null = null;
   showButtons = signal(true);
   showContent = signal(false);
-  selectedIndex: number|null = null;
+  selectedIndex: number|null = 0;
+  selectedIndex_old: number|null = 0;
   center = { x: 0, y: 0 };
   rotationSpeed = 0.005; // Radians/frame, default
   centerReady = false;
@@ -141,6 +144,7 @@ export class CircleMenuComponent implements OnInit {
         My work <strong>consistently bridges the technical and human</strong>, focusing on <strong>robust solutions</strong> and delivering <strong>measurable business impact</strong>.<hr>
         <strong>Node.js • C • React.js • Vanilla JS • Django • Python • MicroPython • Arduino • PHP • MySQL • PostgreSQL • MS SQL Server • MQTT • CAN bus • WebSockets • APIs • Linux • AWS • WHM/cPanel • PLCs • VFDs • HMI • SCADA • OPC UA • Modbus • RS485 • RS232</strong>`
       },
+      heading_quote: 'Balance in all things.',
       quote_mini: '"Jack of all trades..."',
       quote: '"Jack of all trades, master of none, but oftentimes better than a master of one."'
     },
@@ -153,6 +157,7 @@ export class CircleMenuComponent implements OnInit {
         My <strong>approach balances technical innovation with practical business outcomes</strong>, always building strong, lasting client relationships.<hr>
         <strong>Client pitching • Market strategy • Product positioning • Proposal writing • Customer profiling • Startup operations • Trade shows</strong>`
       },
+      heading_quote: 'Good strategy is key.',
       quote_mini: '"The art of business..."',
       quote: '"The art of business is successfully bringing together different sectors of expertise into one living system of value that is, or will be, in demand."'
     },
@@ -165,6 +170,7 @@ export class CircleMenuComponent implements OnInit {
         My skills span graphic design, branding, and content creation (with >50k TikTok followers), as well as AI-powered UX, video, and music production. I <strong>create engaging, accessible digital experiences</strong> that resonate with users and drive adoption.<hr>
         <strong>UI/UX • Adobe Photoshop • Illustrator • Krita • Video editing • After Effects • Premier Pro • Content creation • Branding • HMI design • Web graphics • Blender • Social media • Accessibility • OnShape</strong>`
       },
+      heading_quote: 'Creatively evoke emotion.',
       quote_mini: '"The collective summary..."',
       quote: '"The collective summary of all relevant experiences expressed in one piece of beauty within confining parameters, that is functional and creates an emotive response."'
     },
@@ -177,6 +183,7 @@ export class CircleMenuComponent implements OnInit {
         <strong>My experience includes</strong> UX/UI design, dynamic charting, and creating custom interfaces for industrial control, monitoring, and reporting.<hr>
         <strong>React.js • Angular • JavaScript • TypeScript • HTML • SCSS/CSS • WordPress • Data visualization • REST APIs • WebSockets</strong>`
       },
+      heading_quote: 'Simple but effective.',
       quote_mini: '"Start with a feasible idea..."',
       quote: '"Start with a feasible idea then grow and mould it, experiencing it as the user whilst being the developer, until it becomes what it was meant to be."'
     },
@@ -189,8 +196,9 @@ export class CircleMenuComponent implements OnInit {
         My work <strong>enables seamless data flow, interoperability, and flexible integration</strong> - powering both industrial automation and web solutions.<hr>
         <strong>Node.js • C • PHP • Express.js • Python • MicroPython • Arduino • MQTT • CAN bus • WebSockets • REST APIs • Linux socket programming</strong>`
       },
+      heading_quote: 'Stable, reliable and efficient.',
       quote_mini: '"Understand the right system..."',
-      quote: '"Understand the right system for both the immediate and long-term goals, choosing the right technology and methodolgy, then implement efficient, testable solutions."'
+      quote: '"Understand the right system for both the immediate and long-term goals. Choose the right technology and methodolgy, then implement efficient, secure and testable solutions."'
     },
     {
       label: 'data',
@@ -201,6 +209,7 @@ export class CircleMenuComponent implements OnInit {
         I leverage data to optimize systems, drive business value, and inform strategic decision-making.<hr>
         <strong>MySQL • PostgreSQL • MS SQL Server • JSON • Data pipelines • Analytics • ETL • Automated reporting (PDF/Excel)</strong>`
       },
+      heading_quote: 'Know your data and scale.',
       quote_mini: '"Envision the data..."',
       quote: '"Envision the data requirements to build the right system early on. Choose efficient systems and structure that match the projected application, understanding the design trade-offs and how to mitigate fundamental restrictions."'
     },
@@ -212,6 +221,7 @@ export class CircleMenuComponent implements OnInit {
         <strong>I design and maintain reliable, secure server environments</strong> that scale with business needs, ensuring high uptime and robust support for both web and industrial systems<hr>
         <strong>Ubuntu • Amazon Linux • AWS • WHM/cPanel • DNS • SSL • SMTP • MQTT brokers • Docker • CI/CD • Networking • Email hosting</strong>`
       },
+      heading_quote: 'Trusted, efficient and secure.',
       quote_mini: '"Tend your garden..."',
       quote: '"Tend your garden, automate manual processes and create updatable systems. Lean into well tested, solid infrastructure and practises that are well supported, but should there be trouble, remember, the buck stops with you."'
     },
@@ -404,6 +414,7 @@ export class CircleMenuComponent implements OnInit {
       this.moveLeftInfoWindow();
       this.menuState = 'hidden'; // Remove from DOM after animation
       this.contentState = 'visible';
+      this.selectedIndex_old = this.selectedIndex;
       //setTimeout(() => {
          // Show content component
       //}, 100); // animation duration
