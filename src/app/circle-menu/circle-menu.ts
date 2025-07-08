@@ -14,7 +14,8 @@ type MenuItem = {
   content: {
     heading: string;
     body: string;
-  };
+  },
+  quote: string;
 };
 
 @Component({
@@ -78,6 +79,12 @@ type MenuItem = {
       </button>
     </div>
   </div>
+
+  <div #qContainer class="quote-container" *ngIf="showContent() && selectedIndex !== null">
+    <div *ngIf="contentState !== 'hidden'" class="quote-box" [ngStyle]="getContentStyle()">
+      <h2>{{ menuItems[selectedIndex!].quote }}</h2>
+    </div>
+  </div>
   `,
   styleUrls: ['./circle-menu.scss']
 })
@@ -109,6 +116,19 @@ export class CircleMenuComponent implements OnInit {
       : null;
   }
 
+  
+  private _qContainer: ElementRef<HTMLDivElement> | null = null;
+
+  @ViewChild('qContainer', { static: false })
+  set qContainer(el: ElementRef<HTMLDivElement> | null) {
+    this._qContainer = el;
+  }
+  private get qContainerEl(): HTMLDivElement | null {
+    return this.qContainer && this.qContainer.nativeElement
+      ? this.qContainer.nativeElement
+      : null;
+  }
+
   menuItems: MenuItem[] = [
     {
       label: 'myXP',
@@ -118,7 +138,8 @@ export class CircleMenuComponent implements OnInit {
         <strong>I’ve led projects</strong> from renewable energy at CST SA (attending COP17 for wind tech innovation), to <strong>founding and running DIR Information Technology</strong>, through to <strong>architecting industrial IoT and AGV (Automated Guided Vehicle) systems</strong> at Control Technology and Battalion Technologies.<hr>
         My work <strong>consistently bridges the technical and human</strong>, focusing on <strong>robust solutions</strong> and delivering <strong>measurable business impact</strong>.<hr>
         <strong>Node.js • C • React.js • Vanilla JS • Django • Python • MicroPython • Arduino • PHP • MySQL • PostgreSQL • MS SQL Server • MQTT • CAN bus • WebSockets • APIs • Linux • AWS • WHM/cPanel • PLCs • VFDs • HMI • SCADA • OPC UA • Modbus • RS485 • RS232</strong>`
-      }
+      },
+      quote: '"Jack of all trades, master of none, but oftentimes better than a master of one."'
     },
     {
       label: 'bizDev',
@@ -128,7 +149,8 @@ export class CircleMenuComponent implements OnInit {
         <strong>At Battalion Technologies</strong>, I crafted market entry, product, and service strategies, managed stakeholder engagements from trade shows to site visits, and helped define the company’s vision, core competencies, and growth trajectory.<hr>
         My <strong>approach balances technical innovation with practical business outcomes</strong>, always building strong, lasting client relationships.<hr>
         <strong>Client pitching • Market strategy • Product positioning • Proposal writing • Customer profiling • Startup operations • Trade shows</strong>`
-      }
+      },
+      quote: '"The art of business is successfully bringing together different sectors of expertise into one living system of value that is, or will be, in demand."'
     },
     {
       label: 'design',
@@ -138,7 +160,8 @@ export class CircleMenuComponent implements OnInit {
         <strong>I’ve designed interfaces</strong> for industrial SCADA/HMI, intuitive web applications, and <strong>complete product ecosystems</strong> - always prioritizing usability, safety, and maintainability.<hr>
         My skills span graphic design, branding, and content creation (with >50k TikTok followers), as well as AI-powered UX, video, and music production. I <strong>create engaging, accessible digital experiences</strong> that resonate with users and drive adoption.<hr>
         <strong>UI/UX • Adobe Photoshop • Illustrator • Krita • Video editing • After Effects • Premier Pro • Content creation • Branding • HMI design • Web graphics • Blender • Social media • Accessibility • OnShape</strong>`
-      }
+      },
+      quote: '"The collective summary of all relevant experiences expressed in one piece of beauty within confining parameters, that is functional and creates an emotive response."'
     },
     {
       label: 'frEnd',
@@ -148,7 +171,8 @@ export class CircleMenuComponent implements OnInit {
         <strong>I emphasize performance, responsiveness, and seamless integration</strong> with backends and APIs.<hr>
         <strong>My experience includes</strong> UX/UI design, dynamic charting, and creating custom interfaces for industrial control, monitoring, and reporting.<hr>
         <strong>React.js • Angular • JavaScript • TypeScript • HTML • SCSS/CSS • WordPress • Data visualization • REST APIs • WebSockets</strong>`
-      }
+      },
+      quote: '"Start with a feasible idea then grow and mould it, experiencing it as the user whilst being the developer, until it becomes what it was meant to be."'
     },
     {
       label: 'bkEnd',
@@ -158,7 +182,8 @@ export class CircleMenuComponent implements OnInit {
         <strong>I’ve developed everything</strong> from low-level device drivers and non-blocking CAN/MQTT communication layers to API-driven server applications and real-time socket bridges.<hr>
         My work <strong>enables seamless data flow, interoperability, and flexible integration</strong> - powering both industrial automation and web solutions.<hr>
         <strong>Node.js • C • PHP • Express.js • Python • MicroPython • Arduino • MQTT • CAN bus • WebSockets • REST APIs • Linux socket programming</strong>`
-      }
+      },
+      quote: '"Understand the right system for both the immediate and long-term goals, choosing the right technology and methodolgy, then implement efficient, testable solutions."'
     },
     {
       label: 'data',
@@ -168,7 +193,8 @@ export class CircleMenuComponent implements OnInit {
         <strong>I’ve architected pipelines</strong> for data normalization, analytics, and automated reporting (PDF/Excel), always with a focus on <strong>operational insight and actionable metrics</strong>.<hr>
         I leverage data to optimize systems, drive business value, and inform strategic decision-making.<hr>
         <strong>MySQL • PostgreSQL • MS SQL Server • JSON • Data pipelines • Analytics • ETL • Automated reporting (PDF/Excel)</strong>`
-      }
+      },
+      quote: '"Envision the data requirements to build the right system early on. Choose efficient systems and structure that match the projected application, understanding the design trade-offs and how to mitigate fundamental restrictions."'
     },
     {
       label: 'server',
@@ -177,7 +203,8 @@ export class CircleMenuComponent implements OnInit {
         body: `<strong>Extensive server experience</strong>: from managing AWS deployments, web hosting (WHM, cPanel), and Linux system administration (Ubuntu, Amazon Linux), to configuring networking (MQTT brokers, Websockets, APIs) and email infrastructure.<hr>
         <strong>I design and maintain reliable, secure server environments</strong> that scale with business needs, ensuring high uptime and robust support for both web and industrial systems<hr>
         <strong>Ubuntu • Amazon Linux • AWS • WHM/cPanel • DNS • SSL • SMTP • MQTT brokers • Docker • CI/CD • Networking • Email hosting</strong>`
-      }
+      },
+      quote: '"Tend your garden, automate manual processes and create updatable systems. Lean into well tested, solid infrastructure and practises that are well supported, but should there be trouble, remember, the buck stops with you."'
     },
   ];
 
@@ -268,12 +295,28 @@ export class CircleMenuComponent implements OnInit {
       }
       //this._cContainer.nativeElement.style.background = 'linear-gradient(90deg, #6067b5, transparent)';
     }
+
+    
+    if (this._qContainer && this._qContainer.nativeElement){
+      if(window.innerWidth > 768){
+        this._qContainer.nativeElement.style.width = '50%';
+        this._qContainer.nativeElement.style.right = '0';
+      } else{
+        this._qContainer.nativeElement.style.display = 'none';
+      }
+      //this._cContainer.nativeElement.style.background = 'linear-gradient(90deg, #6067b5, transparent)';
+    }
   }
   moveCentreInfoWindow() {
     //const el = this.cContainerEl;
     if (this._cContainer && this._cContainer.nativeElement){
       //this._cContainer.nativeElement.style.width = '';
       this._cContainer.nativeElement.style.background = '';
+    }
+
+    
+    if (this._qContainer && this._qContainer.nativeElement){
+      this._qContainer.nativeElement.style.background = '';
     }
   }
 
