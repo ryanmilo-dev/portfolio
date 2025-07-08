@@ -183,7 +183,7 @@ export class CircleMenuComponent implements OnInit {
         <strong>My experience includes</strong> UX/UI design, dynamic charting, and creating custom interfaces for industrial control, monitoring, and reporting.<hr>
         <strong>React.js • Angular • JavaScript • TypeScript • HTML • SCSS/CSS • WordPress • Data visualization • REST APIs • WebSockets</strong>`
       },
-      heading_quote: 'Simple but effective.',
+      heading_quote: 'Keep it simple but effective.',
       quote_mini: '"Start with a feasible idea..."',
       quote: '"Start with a feasible idea then grow and mould it, experiencing it as the user whilst being the developer, until it becomes what it was meant to be."'
     },
