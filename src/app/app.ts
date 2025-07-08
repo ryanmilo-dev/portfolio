@@ -70,6 +70,9 @@ export class AppComponent implements AfterViewInit {
   titleFaded = false;
   isMobile = false;
 
+  modelTargetYPosition = 10;
+  modelYPositionArray = [5, 10, 12, 12, 12, 19, 17]; //myXP, BizDev, design, frEnd, bkEnd, data, server
+
   //3D model
   movedToMiddle = false;
   currentPosition = [0, -10, 10];
@@ -793,31 +796,31 @@ export class AppComponent implements AfterViewInit {
               if(this.old_selectedCircleMenuIndex !== this.selectedCircleMenuIndex){
                 
                 switch (this.selectedCircleMenuIndex){
-                  case 1:
+                  case 1: //BizDev
                     this.setPointsToSphere(90)
                     this.resizeToHalfScreen();
                     break;
-                  case 2:
+                  case 2: //Design
                     this.setPointsToCube(110);
                     this.resizeToHalfScreen();
                     break;
-                  case 3:
+                  case 3: //frEnd
                     this.setPointsToPyramid(220, 220);
                     this.resizeToHalfScreen();
                     break;
-                  case 4:
+                  case 4: //bkEnd
                     this.setPointsToTorus(80, 30, 100);
                     this.resizeToHalfScreen();
                     break;
-                  case 5:
+                  case 5: //data
                     this.setPointsToTesseract(35, 100, true);
                     this.resizeToHalfScreen();
                     break;
-                  case 6:
+                  case 6: //server
                     this.setPointsToFace(140, 180, 100, 100);
                     this.resizeToHalfScreen();
                     break;
-                  case 0:
+                  case 0: //myXP
                     this.setPointsToSpikeySphere(70, 40, 100, 0.18);
                     this.resizeToHalfScreen();
                     break;
@@ -825,6 +828,14 @@ export class AppComponent implements AfterViewInit {
                     this.setPointsToDoubleHelix(40, 18, 10, 100);// radius, pitch, turns, num points
                     this.resizeToFullScreen();
                 }
+
+                console.log(this.selectedCircleMenuIndex);
+                if(this.selectedCircleMenuIndex !== null && this.modelYPositionArray.length > this.selectedCircleMenuIndex){
+                  this.modelTargetYPosition = this.modelYPositionArray[this.selectedCircleMenuIndex];
+                } else {
+                  this.modelTargetYPosition = 10;
+                }
+
                 this.newPointsPositionSet = true;
                 if (this.debounceTimeout) clearTimeout(this.debounceTimeout);
                 }
@@ -898,12 +909,11 @@ export class AppComponent implements AfterViewInit {
       this.model.rotation.y = this.mouse.x;
 
       if(this.menuSelectionEvent){
-        const targetYPosition = 20;
-        if(this.model.position.y < targetYPosition + 0.1 && this.model.position.y > targetYPosition - 0.1){
-          this.model.position.y = targetYPosition;
+        if(this.model.position.y < this.modelTargetYPosition + 0.1 && this.model.position.y > this.modelTargetYPosition - 0.1){
+          this.model.position.y = this.modelTargetYPosition;
           this.menuSelectionEvent = false;
         } else {
-          this.model.position.y += (targetYPosition - this.model.position.y + 1)/targetYPosition;
+          this.model.position.y += (this.modelTargetYPosition - this.model.position.y + 1)/this.modelTargetYPosition;
         }
       }
 
