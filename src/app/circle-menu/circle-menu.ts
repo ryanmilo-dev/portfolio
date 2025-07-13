@@ -156,7 +156,7 @@ export class CircleMenuComponent implements OnInit {
         <strong>At </strong><a class="menu-content-link" title="Battalion Technologies Website" href="https://www.battaliontech.co.za/" target="_blank" rel="noopener noreferrer">
         <strong>↗Battalion Technologies</a> start-up</strong>, I led <strong>technical architecture and delivery</strong> for our flagship AGV products, 
         <strong>inventing a digitized auto-commissioning platform</strong> that cut integration time and costs by <strong>+/-50%</strong>. I built robust, fullstack solutions 
-        with Node.js, C, MQTT, Websockets, CAN bus, and Linux, while <strong>mentoring engineers</strong> and shaping a <strong>high-performance culture</strong>. My work 
+        with Node.js, C, MQTT, Websockets, CAN bus and Linux, while <strong>mentoring engineers</strong> and shaping a <strong>high-performance culture</strong>. My work 
         <strong>bridged business and engineering</strong>, 
         driving both our product roadmap and market success.<hr>
         <strong>Tech lead • Culture curation • Rapid development • Mentoring • Product strategy • Client-facing • Customer profiling • Start-up growth</strong>`
@@ -206,7 +206,7 @@ export class CircleMenuComponent implements OnInit {
       content: {
         heading: 'Backend',
         body: `I've designed and built robust backend systems for <strong>demanding real-time and industrial environments</strong>. My experience spans Node.js, 
-        Python, C, and PHP, with <strong>deep expertise</strong> in architecting <strong>scalable APIs, data pipelines, and microservices</strong>. I’ve engineered <strong>IIoT 
+        Python, C, and PHP, with <strong>deep expertise</strong> in architecting <strong>scalable APIs, data pipelines and microservices</strong>. I’ve engineered <strong>IIoT 
         platforms with secure PostgreSQL databases</strong> and automated <strong>data ingestion, implemented resilient MQTT and WebSocket infrastructures</strong> 
         for AGV and industrial systems, and managed <strong>cloud deployments on AWS</strong>. My approach blends <strong>low-level performance with maintainability</strong>, 
         always aligning backend architecture with <strong>business needs and real-world operations</strong>.<hr>

@@ -182,7 +182,7 @@
     opacity: 1;
     backdrop-filter: blur(1px);
     border-radius:5px;
-    background: #ffffffaa;
+    background: linear-gradient(90deg, #e2f3ff55, #ffffff55);
     transition: all 0.6s ease;
   }
   h2.quote {
