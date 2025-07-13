@@ -140,7 +140,7 @@ export class CircleMenuComponent implements OnInit {
       content: {
         heading: 'Experience',
         body: `With a <strong>BSc in Electrical, Electronic & Computer Engineering</strong>, I’ve built a <strong>diverse career</strong> spanning firmware development, fullstack web engineering, industrial automation, business leadership, and technical mentorship.<br><br>
-        <strong>I’ve led projects</strong> from renewable energy at CST SA (attending COP17 for wind tech innovation), to <strong>founding and running DIR Information Technology</strong>, through to <strong>architecting industrial IoT and AGV (Automated Guided Vehicle) systems</strong> at Control Technology and Battalion Technologies.<hr>
+        <strong>I’ve led projects</strong> from renewable energy at CST SA (attending COP17 for wind tech innovation), to <strong>founding and running Iterate Engineering/DIR Information Technology</strong>, through to <strong>architecting industrial IoT and AGV (Automated Guided Vehicle) systems</strong> at Control Technology and Battalion Technologies.<hr>
         My work <strong>consistently bridges the technical and human</strong>, focusing on <strong>robust solutions</strong> and delivering <strong>measurable business impact</strong>.<hr>
         <strong>Node.js • C • React.js • Vanilla JS • Django • Python • MicroPython • Arduino • PHP • MySQL • PostgreSQL • MS SQL Server • MQTT • CAN bus • WebSockets • APIs • Linux • AWS • WHM/cPanel • PLCs • VFDs • HMI • SCADA • OPC UA • Modbus • RS485 • RS232</strong>`
       },
@@ -152,10 +152,14 @@ export class CircleMenuComponent implements OnInit {
       label: 'bizDev',
       content: {
         heading: 'Business Development',
-        body: `<strong>I founded and grew my own IT/web development business</strong>, led client relationships, managed pitches and proposals, and shaped market strategies for startups and established firms.<br><br>
-        <strong>At Battalion Technologies</strong>, I crafted market entry, product, and service strategies, managed stakeholder engagements from trade shows to site visits, and helped define the company’s vision, core competencies, and growth trajectory.<hr>
-        My <strong>approach balances technical innovation with practical business outcomes</strong>, always building strong, lasting client relationships.<hr>
-        <strong>Client pitching • Market strategy • Product positioning • Proposal writing • Customer profiling • Startup operations • Trade shows</strong>`
+        body: `<strong>I founded and grew my own web development and engineering consultancy</strong>, led client relationships, managed pitches and proposals, and shaped market strategies for start-ups and established firms.<br><br>
+        <strong>At </strong><a class="menu-content-link" title="Battalion Technologies Website" href="https://www.battaliontech.co.za/" target="_blank" rel="noopener noreferrer">
+        <strong>↗Battalion Technologies</a> start-up</strong>, I led <strong>technical architecture and delivery</strong> for our flagship AGV products, 
+        <strong>inventing a digitized auto-commissioning platform</strong> that cut integration time and costs by <strong>+/-50%</strong>. I built robust, fullstack solutions 
+        with Node.js, C, MQTT, Websockets, CAN bus, and Linux, while <strong>mentoring engineers</strong> and shaping a <strong>high-performance culture</strong>. My work 
+        <strong>bridged business and engineering</strong>, 
+        driving both our product roadmap and market success.<hr>
+        <strong>Tech lead • Culture curation • Rapid development • Mentoring • Product strategy • Client-facing • Customer profiling • Start-up growth</strong>`
       },
       heading_quote: 'Good strategy is key.',
       quote_mini: '"The art of business..."',
@@ -168,7 +172,7 @@ export class CircleMenuComponent implements OnInit {
         body: `<strong>User experience and design thinking</strong> are at the heart of my work.<br><br>
         <strong>I’ve designed interfaces</strong> for industrial SCADA/HMI, intuitive web applications, and <strong>complete product ecosystems</strong> - always prioritizing usability, safety, and maintainability.<hr>
         My skills span graphic design, branding, and content creation (with >50k TikTok followers), as well as AI-powered UX, video, and music production. I <strong>create engaging, accessible digital experiences</strong> that resonate with users and drive adoption.<hr>
-        <strong>UI/UX • Adobe Photoshop • Illustrator • Krita • Video editing • After Effects • Premier Pro • Content creation • Branding • HMI design • Web graphics • Blender • Social media • Accessibility • OnShape</strong>`
+        <strong>UI/UX • Photoshop • Figma • Illustrator • After Effects • Premier Pro • CapCut • Copywriting • Brand • Blender • OnShape</strong>`
       },
       heading_quote: 'Creatively evoke emotion.',
       quote_mini: '"The collective summary..."',
@@ -178,10 +182,20 @@ export class CircleMenuComponent implements OnInit {
       label: 'frEnd',
       content: {
         heading: 'Frontend',
-        body: `Proficient in <strong>building modern web interfaces</strong> with React, Vanilla JS, and WordPress, I’ve delivered customer-facing dashboards, real-time data visualizations, and robust admin panels.<br>
+        body: `Proficient in <strong>building modern web interfaces</strong> with React, Next.js, Angular, Django and Vanilla JS, I’ve delivered customer-facing dashboards, real-time data visualizations, and robust admin panels.<br>
         <strong>I emphasize performance, responsiveness, and seamless integration</strong> with backends and APIs.<hr>
         <strong>My experience includes</strong> UX/UI design, dynamic charting, and creating custom interfaces for industrial control, monitoring, and reporting.<hr>
-        <strong>React.js • Angular • JavaScript • TypeScript • HTML • SCSS/CSS • WordPress • Data visualization • REST APIs • WebSockets</strong>`
+        Check out my projects for <strong>
+        <a class="menu-content-link" title="Digitorum Flex Website" href="https://digitorumflex.com/" target="_blank" rel="noopener noreferrer">
+        ↗Etherminators and Merge Machines</a></strong>, my 
+        <strong>
+        <a class="menu-content-link" title="Data Dashboard Mock-up" href="https://server.iterateengineering.com/dashboard" target="_blank" rel="noopener noreferrer">
+        ↗Data Dashboard
+        </a>
+        </strong> mock-up for KPI monitoring and my <strong>AI Persona web app</strong> (before GPTs/agents) dev-ed in 2023 called <strong>
+        <a class="menu-content-link" title="Neuron Web App" href="https://server.iterateengineering.com/" target="_blank" rel="noopener noreferrer">
+        ↗Neuron</a></strong>, includes Telegram access for convenience.<hr>
+        <strong>React.js • Angular • Next.js • TypeScript • JavaScript • Three.js • Design • Data visualization • WordPress</strong>`
       },
       heading_quote: 'Keep it simple but effective.',
       quote_mini: '"Start with a feasible idea..."',
@@ -191,10 +205,17 @@ export class CircleMenuComponent implements OnInit {
       label: 'bkEnd',
       content: {
         heading: 'Backend',
-        body: `<strong>Deep experience</strong> in Node.js, C, PHP, and microcontroller firmware (C, MicroPython, Arduino), with a strong focus on robust, scalable, and secure architectures.<br>
-        <strong>I’ve developed everything</strong> from low-level device drivers and non-blocking CAN/MQTT communication layers to API-driven server applications and real-time socket bridges.<hr>
-        My work <strong>enables seamless data flow, interoperability, and flexible integration</strong> - powering both industrial automation and web solutions.<hr>
-        <strong>Node.js • C • PHP • Express.js • Python • MicroPython • Arduino • MQTT • CAN bus • WebSockets • REST APIs • Linux socket programming</strong>`
+        body: `I've designed and built robust backend systems for <strong>demanding real-time and industrial environments</strong>. My experience spans Node.js, 
+        Python, C, and PHP, with <strong>deep expertise</strong> in architecting <strong>scalable APIs, data pipelines, and microservices</strong>. I’ve engineered <strong>IIoT 
+        platforms with secure PostgreSQL databases</strong> and automated <strong>data ingestion, implemented resilient MQTT and WebSocket infrastructures</strong> 
+        for AGV and industrial systems, and managed <strong>cloud deployments on AWS</strong>. My approach blends <strong>low-level performance with maintainability</strong>, 
+        always aligning backend architecture with <strong>business needs and real-world operations</strong>.<hr>
+        Check out my <strong>AI Persona web app</strong> (before GPTs/agents) dev-ed in 2023 called <strong>
+        <a class="menu-content-link" title="Neuron Web App" href="https://server.iterateengineering.com/" target="_blank" rel="noopener noreferrer">
+        ↗Neuron
+        </a>
+        </strong>, includes Telegram access for convenience.<hr>
+        <strong>Node.js • Express • Python • C • MQTT • WebSockets • REST APIs • Microservices • AWS • Linux Admin • Docker • NGINX • PHP</strong>`
       },
       heading_quote: 'Stable, reliable and efficient.',
       quote_mini: '"Understand the right system..."',
@@ -207,6 +228,11 @@ export class CircleMenuComponent implements OnInit {
         body: `<strong>Skilled in both real-time and batch data management</strong>: SQL (Postgres, MySQL, MS SQL Server), JSON-based systems, and high-speed telemetry for industrial IoT.<br>
         <strong>I’ve architected pipelines</strong> for data normalization, analytics, and automated reporting (PDF/Excel), always with a focus on <strong>operational insight and actionable metrics</strong>.<hr>
         I leverage data to optimize systems, drive business value, and inform strategic decision-making.<hr>
+        Check out my Eisenhower Matrix inspired <strong>
+        <a class="menu-content-link" title="Data Dashboard Mock-up" href="https://server.iterateengineering.com/dashboard" target="_blank" rel="noopener noreferrer">
+        ↗Data Dashboard
+        </a>
+        </strong> mock-up for KPI monitoring.<hr>
         <strong>MySQL • PostgreSQL • MS SQL Server • JSON • Data pipelines • Analytics • ETL • Automated reporting (PDF/Excel)</strong>`
       },
       heading_quote: 'Know your data and scale.',
@@ -219,7 +245,7 @@ export class CircleMenuComponent implements OnInit {
         heading: 'Server',
         body: `<strong>Extensive server experience</strong>: from managing AWS deployments, web hosting (WHM, cPanel), and Linux system administration (Ubuntu, Amazon Linux), to configuring networking (MQTT brokers, Websockets, APIs) and email infrastructure.<hr>
         <strong>I design and maintain reliable, secure server environments</strong> that scale with business needs, ensuring high uptime and robust support for both web and industrial systems<hr>
-        <strong>Ubuntu • Amazon Linux • AWS • WHM/cPanel • DNS • SSL • SMTP • MQTT brokers • Docker • CI/CD • Networking • Email hosting</strong>`
+        <strong>Ubuntu • Linux Admin • AWS • NGINX • HAProxy • Docker • CI/CD • Bash Scripting • Network • WHM/cPanel</strong>`
       },
       heading_quote: 'Trusted, efficient and secure.',
       quote_mini: '"Tend your garden..."',

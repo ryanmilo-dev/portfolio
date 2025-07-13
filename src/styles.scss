@@ -126,3 +126,29 @@ html, body {
   font-weight: 900;
   font-style: italic;
 }
+
+
+.menu-content-link {
+  color: #00ff00;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #bbffbb;
+    text-decoration: none;
+  }
+  &:visited {
+    color: #009900;
+    text-decoration: none;
+  }
+  &:active {
+    color: #22bb22;
+    text-decoration: none;
+  }
+  &:focus {
+    outline: 2px solid #00ff00;
+    text-decoration: none;
+  }
+  &:-webkit-any-link {
+    text-decoration: none;
+  }
+}
