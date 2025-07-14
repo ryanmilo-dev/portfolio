@@ -88,6 +88,7 @@ export class AppComponent implements AfterViewInit {
   @HostListener('window:resize')
   onResize() {
     this.isMobile = window.innerWidth < 768;
+    document.body.style.width = `${window.innerWidth}px`;
   }
 
   ngAfterViewInit() {
