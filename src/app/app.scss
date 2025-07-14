@@ -10,8 +10,18 @@
 canvas {
   transition: all 0.2s ease;
 }
+.relative-container{
+  position:relative;
+  width:100vw;
+  height: Calc(100vh - 2rem - 2px);
+  overflow:hidden;
+}
+.project-container {
+  position:relative;
+  background: linear-gradient(90deg, #111111 0%, #111111 80%, #ffff00 100%);
+}
 .page-container {
-    position: fixed;
+    position: absolute;
     width: 100vw;
     height: 100vh;
     backdrop-filter: blur(0.5px);
@@ -20,7 +30,7 @@ canvas {
   cursor:pointer;
 }
 .page-title-container{
-    position: fixed;
+    position: absolute;
     top: 20px;
     left: 50%;
     transform: translate(-50%, 0);
@@ -156,7 +166,7 @@ input[type="password"] {
 }
 
 .bg-canvas-wrapper {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 0;
   width: 100vw;

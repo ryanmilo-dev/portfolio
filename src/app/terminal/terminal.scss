@@ -1,0 +1,112 @@
+pre {
+  margin-block: 0;
+}
+.ubuntu {
+  border-top: solid 1px #415834;
+  border-bottom: solid 1px #415834;
+  background: #222;
+  color: #eee;
+  .terminal-input span { color: #00ff00; }
+}
+
+.powershell {
+  border-top: solid 1px #103f81;
+  border-bottom: solid 1px #103f81;
+  background: #012456;
+  color: #eee;
+  .terminal-input span { color: #00f7ef; }
+}
+
+.gitbash {
+  border-top: solid 1px #555;
+  border-bottom: solid 1px #555;
+  background: #1b1b1b;
+  color: #eee;
+  .terminal-input span { color: #f0e130; }
+}
+
+.terminal-container {
+  width: auto;
+}
+
+.terminal-history {
+  //min-height: 200px;
+  padding: 1rem;
+  font-family: monospace;
+  max-height: 175px;
+  overflow-y:auto;
+  //display: none;scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    background: #333;
+  }
+}
+.ubuntu .terminal-history{
+  background: #1a1a1a;
+  scrollbar-color: #0f0 #333;
+  &::-webkit-scrollbar-thumb {
+    background: #0f0;
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #090;
+  }
+}
+.linked {
+  color:#0f0;
+}
+
+.powershell .terminal-history {
+  background: #011b41;
+  scrollbar-color: #00ffff #333;
+  &::-webkit-scrollbar-thumb {
+    background: #00ffff;
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #103f81;
+  }
+  a {
+    color:#0ff;
+    transition: color 0.3s ease;
+  
+    &:hover {
+      color:#9ff;
+    }
+  }
+}
+.gitbash .terminal-history {
+  background: #131313;
+  scrollbar-color: #ffff00 #333;
+  &::-webkit-scrollbar-thumb {
+    background: #ffff00;
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #7c7c01;
+  }
+  a {
+    color:#ff0;
+    transition: color 0.3s ease;
+  
+    &:hover {
+      color:#ff9;
+    }
+  }
+}
+
+.terminal-input {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-family: monospace;
+  input {
+    background: transparent;
+    border: none;
+    color: inherit;
+    outline: none;
+    font-family: monospace;
+    flex: 1;
+  }
+}

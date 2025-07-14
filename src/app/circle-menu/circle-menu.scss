@@ -1,5 +1,5 @@
 :host {
-  position: fixed;
+  position: absolute;
   inset: 0;
   width: 100vw;
   height: 100vh;
@@ -23,7 +23,7 @@
   h1.heading-quote {
     font-family: "Montserrat";
     text-align: center;
-    position: fixed;
+    position: absolute;
     font-size:0.7em;
     top: 60px;
     left: 50%;
@@ -77,7 +77,7 @@
 
 .content-container {
   font-family: "Montserrat";
-  position: fixed;
+  position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
@@ -87,7 +87,7 @@
 }
 .quote-container {
   font-family: "Montserrat";
-  position: fixed;
+  position: absolute;
   right:0;
   width:50%;
   display: flex;
@@ -171,7 +171,7 @@
 
   h2.quote-mini {
     text-align: center;
-    position: fixed;
+    position: absolute;
     top: 47%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -187,7 +187,7 @@
   }
   h2.quote {
     text-align: center;
-    position: fixed;
+    position: absolute;
     top: 47%;
     left: 50%;
     transform: translate(-50%, -50%);

@@ -1,6 +1,8 @@
-import { Component, HostListener, ElementRef, ViewChild, OnInit, signal, EventEmitter, Output } from '@angular/core';
+import { Component, HostListener, ElementRef, ViewChild, OnInit, signal, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, style, animate, transition } from '@angular/animations';
+import { CircleMenuService } from './circle-menu.service';
+import { Subscription } from 'rxjs';
 //import { ThreeDViewerComponent } from '../three-d-viewer/three-d-viewer'; // Adjust path as needed
 
 
@@ -92,7 +94,8 @@ type MenuItem = {
   `,
   styleUrls: ['./circle-menu.scss']
 })
-export class CircleMenuComponent implements OnInit {
+export class CircleMenuComponent implements OnInit, OnDestroy {
+  private actionSub?: Subscription;
   buttonCount = 7;
   radius = 130;
   buttons: ButtonData[] = [];
@@ -108,6 +111,14 @@ export class CircleMenuComponent implements OnInit {
   rotationSpeed = 0.005; // Radians/frame, default
   centerReady = false;
   buttonScale = 1.0;
+  
+  constructor(private circleMenuService: CircleMenuService) {
+    this.circleMenuService.action$.subscribe(action => {
+      if (action.type === 'selectIndex') {
+        this.onButtonClick(action.value);
+      }
+    });
+  }
 
   private _cContainer: ElementRef<HTMLDivElement> | null = null;
 
@@ -271,6 +282,18 @@ export class CircleMenuComponent implements OnInit {
       angle: (2 * Math.PI / this.buttonCount) * i
     }));
     this.animateRotation();
+    
+    // Subscribe when component initializes
+    this.actionSub = this.circleMenuService.action$.subscribe(action => {
+      if (action.type === 'selectIndex') {
+        this.onButtonClick(action.value);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      if(action.type === 'back'){
+        this.onCloseContent();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
   }
 
   ngAfterViewInit() {
@@ -427,6 +450,11 @@ export class CircleMenuComponent implements OnInit {
     // Map: centre = 0.03 (fast), edge = 0.005 (slow)
     let minR = this.radius + 60;
     this.rotationSpeed = Math.max(0.0, 0.01 * (1 - Math.min(dist, minR) / minR));
+  }
+
+  ngOnDestroy() {
+    // Clean up the subscription
+    this.actionSub?.unsubscribe();
   }
 
   onButtonClick(i: number) {

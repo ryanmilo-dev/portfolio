@@ -3,6 +3,22 @@ body {
   //background: linear-gradient(90deg, #aebfff 0%, #7543c6 100%);
   //background: linear-gradient(90deg, #ffffff 0%, #e5efff 50%, #ffffff 100%);
   background: radial-gradient(circle, #cce9ff 0%, #ffffff 50%, #ffffff 100%);
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #999 #222; // thumb, track
+
+  /* Webkit Browsers */
+  &::-webkit-scrollbar {
+    width: 10px;
+    background: #222;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #999;
+    border-radius: 8px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #666;
+  }
 }
 
 hr {
@@ -127,6 +143,14 @@ html, body {
   font-style: italic;
 }
 
+.crack-img {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  left: 48%;
+  top: 28%;
+  z-index: 99999999;
+}
 
 .menu-content-link {
   color: #00ff00;
@@ -150,5 +174,28 @@ html, body {
   }
   &:-webkit-any-link {
     text-decoration: none;
+  }
+}
+
+
+.ubuntu a {
+  color:#0f0;
+  transition: color 0.3s ease;
+  &:hover {
+    color:#9f9;
+  }
+}
+.powershell a {
+  color:#0ff;
+  transition: color 0.3s ease;
+  &:hover {
+    color:#9ff;
+  }
+}
+.gitbash a {
+  color:#ff0;
+  transition: color 0.3s ease;
+  &:hover {
+    color:#ff9;
   }
 }

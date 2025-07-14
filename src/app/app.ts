@@ -7,11 +7,11 @@ import { CircleMenuComponent } from './circle-menu/circle-menu';
 import { GLTFLoader } from 'three-stdlib';
 
 import * as THREE from 'three';
-
+import { TerminalComponent } from './terminal/terminal';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule, CircleMenuComponent],
+  imports: [CommonModule, FormsModule, HttpClientModule, CircleMenuComponent, TerminalComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })

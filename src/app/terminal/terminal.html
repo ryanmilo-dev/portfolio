@@ -1,0 +1,15 @@
+<div [ngClass]="theme" class="terminal-container">
+  <div class="terminal-input">
+    <span>{{ prompt }}</span>
+    <input
+      [(ngModel)]="input"
+      (keydown.enter)="handleCommand(input)"
+      (keydown.arrowup)="historyUp()"
+      (keydown.arrowdown)="historyDown()"
+      autofocus
+    />
+  </div>
+  <div #historyContainer class="terminal-history">
+    <div *ngFor="let line of history"><pre><span [innerHTML]="line"></span></pre></div>
+  </div>
+</div>

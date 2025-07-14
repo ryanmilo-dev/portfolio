@@ -1,19 +1,25 @@
-<div #bgCanvasWrapper class="bg-canvas-wrapper">
-  <canvas #bgCanvas></canvas>
+<div #relativeContainer class="relative-container">
+  <div #bgCanvasWrapper class="bg-canvas-wrapper">
+    <canvas #bgCanvas></canvas>
+  </div>
+  <div class="page-container"></div>
+  <div class="container" *ngIf="!accessGranted">
+    <input
+      type="password"
+      [(ngModel)]="password"
+      (keydown.enter)="checkPassword()"
+      (ngModelChange)="onPasswordInput($event)"
+      (focus)="onPasswordFocus()"
+      [disabled]="loading"
+      placeholder="Enter password"
+      autofocus
+      [ngClass]="{'flash-success': feedback === 'success', 'flash-error': feedback === 'error'}"
+    >
+  </div>
+  <circle-menu *ngIf="showCircleMenu" (menuSelected)="onMenuSelected($event)" (menuDeselected)="onMenuDeselected()"></circle-menu>
+  <a class="title-link" href="#"><div class="page-title-container" [ngClass]="{'fade-title': titleFaded}" onclick="location.reload(); return false;"><h1 class="page-title"><span #bgPageTitleGreen class="page-title-green">.ry</span>an</h1></div></a>
 </div>
-<div class="page-container"></div>
-<div class="container" *ngIf="!accessGranted">
-  <input
-    type="password"
-    [(ngModel)]="password"
-    (keydown.enter)="checkPassword()"
-    (ngModelChange)="onPasswordInput($event)"
-    (focus)="onPasswordFocus()"
-    [disabled]="loading"
-    placeholder="Enter password"
-    autofocus
-    [ngClass]="{'flash-success': feedback === 'success', 'flash-error': feedback === 'error'}"
-  >
-</div>
-<circle-menu *ngIf="showCircleMenu" (menuSelected)="onMenuSelected($event)" (menuDeselected)="onMenuDeselected()"></circle-menu>
-<a class="title-link" href="#"><div class="page-title-container" [ngClass]="{'fade-title': titleFaded}" onclick="location.reload(); return false;"><h1 class="page-title"><span #bgPageTitleGreen class="page-title-green">.ry</span>an</h1></div></a>
+<app-terminal *ngIf="showCircleMenu"></app-terminal>
+<!--<div #projectContainer1 class="project-container">
+  <app-terminal></app-terminal>
+</div>-->
