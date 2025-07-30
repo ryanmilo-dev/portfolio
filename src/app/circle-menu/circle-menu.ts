@@ -163,9 +163,9 @@ export class CircleMenuComponent implements OnInit, OnDestroy {
       label: 'bizDev',
       content: {
         heading: 'Business Development',
-        body: `<strong>I am the founding director of <a class="menu-content-link" title="Battalion Technologies Website" href="https://iterateengineering.com/" target="_blank" rel="noopener noreferrer">Iterate Engineering</a>, a technology consultancy.</strong> I've led client relationships, managed pitches and proposals, and shaped market strategies for start-ups and established firms.<br><br>
+        body: `<strong>I am the founding director of <a class="menu-content-link" title="Iterate Engineering Website" href="https://iterateengineering.com/" target="_blank" rel="noopener noreferrer">↗Iterate Engineering</a>, a technology consultancy.</strong> I've led client relationships, managed pitches and proposals, and shaped market strategies for start-ups and established firms.<br><br>
         <strong>At </strong><a class="menu-content-link" title="Battalion Technologies Website" href="https://www.battaliontech.co.za/" target="_blank" rel="noopener noreferrer">
-        <strong>↗Battalion Technologies</a> start-up</strong>, I led <strong>technical architecture and delivery</strong> for flagship AGV products, 
+        <strong>↗Battalion Technologies</strong></a> <strong>start-up</strong>, I led <strong>technical architecture and delivery</strong> for flagship AGV products, 
         <strong>inventing a digitized auto-commissioning platform</strong> that cut commissioning time and costs by <strong>over 50%</strong>. I built robust, fullstack solutions 
         with Node.js, C, MQTT, Websockets and CAN bus on a Linux OS, while <strong>mentoring engineers</strong> and shaping a <strong>Agile high-performance culture</strong>. My work 
         <strong>bridged business and engineering</strong>, 
