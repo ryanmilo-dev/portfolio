@@ -163,11 +163,11 @@ export class CircleMenuComponent implements OnInit, OnDestroy {
       label: 'bizDev',
       content: {
         heading: 'Business Development',
-        body: `<strong>I founded and grew my own web development and engineering consultancy</strong>, led client relationships, managed pitches and proposals, and shaped market strategies for start-ups and established firms.<br><br>
+        body: `<strong>I am the founding director of <a class="menu-content-link" title="Battalion Technologies Website" href="https://iterateengineering.com/" target="_blank" rel="noopener noreferrer">Iterate Engineering</a>, a technology consultancy.</strong> I've led client relationships, managed pitches and proposals, and shaped market strategies for start-ups and established firms.<br><br>
         <strong>At </strong><a class="menu-content-link" title="Battalion Technologies Website" href="https://www.battaliontech.co.za/" target="_blank" rel="noopener noreferrer">
-        <strong>↗Battalion Technologies</a> start-up</strong>, I led <strong>technical architecture and delivery</strong> for our flagship AGV products, 
-        <strong>inventing a digitized auto-commissioning platform</strong> that cut integration time and costs by <strong>+/-50%</strong>. I built robust, fullstack solutions 
-        with Node.js, C, MQTT, Websockets, CAN bus and Linux, while <strong>mentoring engineers</strong> and shaping a <strong>high-performance culture</strong>. My work 
+        <strong>↗Battalion Technologies</a> start-up</strong>, I led <strong>technical architecture and delivery</strong> for flagship AGV products, 
+        <strong>inventing a digitized auto-commissioning platform</strong> that cut commissioning time and costs by <strong>over 50%</strong>. I built robust, fullstack solutions 
+        with Node.js, C, MQTT, Websockets and CAN bus on a Linux OS, while <strong>mentoring engineers</strong> and shaping a <strong>Agile high-performance culture</strong>. My work 
         <strong>bridged business and engineering</strong>, 
         driving both our product roadmap and market success.<hr>
         <strong>Tech lead • Culture curation • Rapid development • Mentoring • Product strategy • Client-facing • Customer profiling • Start-up growth</strong>`
@@ -181,7 +181,7 @@ export class CircleMenuComponent implements OnInit, OnDestroy {
       content: {
         heading: 'Design',
         body: `<strong>User experience and design thinking</strong> are at the heart of my work.<br><br>
-        <strong>I’ve designed interfaces</strong> for industrial SCADA/HMI, intuitive web applications, and <strong>complete product ecosystems</strong> - always prioritizing usability, safety, and maintainability.<hr>
+        <strong>I’ve designed interfaces</strong> for industrial SCADA/HMI, intuitive web applications, and <strong>complete product ecosystems</strong> - always prioritizing usability, safety and maintainability.<hr>
         My skills span graphic design, branding, and content creation (with >50k TikTok followers), as well as AI-powered UX, video, and music production. I <strong>create engaging, accessible digital experiences</strong> that resonate with users and drive adoption.<hr>
         <strong>UI/UX • Photoshop • Figma • Illustrator • After Effects • Premier Pro • CapCut • Copywriting • Brand • Blender • OnShape</strong>`
       },
@@ -194,7 +194,7 @@ export class CircleMenuComponent implements OnInit, OnDestroy {
       content: {
         heading: 'Frontend',
         body: `Proficient in <strong>building modern web interfaces</strong> with React, Next.js, Angular, Django and Vanilla JS, I’ve delivered customer-facing dashboards, real-time data visualizations, and robust admin panels.<br>
-        <strong>I emphasize performance, responsiveness, and seamless integration</strong> with backends and APIs.<hr>
+        <strong>I emphasize performance, responsiveness and seamless integration</strong> with backends and APIs.<hr>
         <strong>My experience includes</strong> UX/UI design, dynamic charting, and creating custom interfaces for industrial control, monitoring, and reporting.<hr>
         Check out my projects for <strong>
         <a class="menu-content-link" title="Digitorum Flex Website" href="https://digitorumflex.com/" target="_blank" rel="noopener noreferrer">
